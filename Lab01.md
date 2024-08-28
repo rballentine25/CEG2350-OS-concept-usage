@@ -5,15 +5,15 @@
 
 ## Part 1 Answers
 
-1.
-2.
-3.
-4.
-5.
+1. mkdir DirA
+2. mkdir "Dir B"
+3. cd "Dir B"
+5. DirA has better naming convention, since the name "Dir B" has to be put in quotations or two different files are made ("Dir" and "B")
+6. mv "Dir B" DirB
 
 ## Part 2 Answers
 
-1.
+1. cd DirA -> touch test.txt
 2. File contents:
 
 ```
