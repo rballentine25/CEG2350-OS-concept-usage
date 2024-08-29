@@ -13,17 +13,19 @@
 
 ## Part 2 Answers
 
-1. cd DirA -> touch test.txt
+1. cd DirA -> touch test.txt --> vim test.txt (to enter text)
 2. File contents:
 
 ```
-**file contents here**
+do or do not
+there is no try
+Yoda
 ```
 
 ## Part 3 Answers
 
-1.
-2.
+1. cp test.txt .hiddentext.txt
+2. "ls -la" or "ls -a"
 
 ## Part 4 Answers
 
