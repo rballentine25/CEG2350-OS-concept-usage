@@ -25,7 +25,7 @@ Yoda
 ## Part 3 Answers
 
 1. cp test.txt .hiddentext.txt
-2. "ls -la" or "ls -a"
+2. some version of "ls -lah" (flags vary but have to at least include -a)
 
 ## Part 4 Answers
 
