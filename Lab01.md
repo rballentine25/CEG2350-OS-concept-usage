@@ -32,9 +32,9 @@ Yoda
 1. SSH command to sign in to your AWS instance:
 
 ```
-**write command here so it will look fancy on GitHub**
+ssh -i ceg2350key.pem ubuntu@52.73.170.36
 ```
 
 ## Part 5 Answers
 
-1. [your_github_username_here Profile](FIXTHISURL-https://github.com/your_username)
+1. [rballentine25](https://github.com/rballentine25)
