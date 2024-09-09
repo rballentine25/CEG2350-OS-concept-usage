@@ -6,8 +6,15 @@
 ## Part 1 Answers
 
 1. Command & steps to create an SSH key pair:
+* enter "ssh-keygen -t ed25519" into WSL and enter a password (or don't)
+
 2. Steps to add public key to GitHub profile:
+* enter "cat .ssh/id_ed25519.pub" to see public key. copy entire file
+* open GitHub and go to settings -> ssh keys -> create new keypair
+* create a title and paste contents of id_ed25519.pub (public key)
+
 3. git command to clone repository: 
+* git clone git@github.com:WSU-kduncan/ceg2350f24-rballentine25.git
 
 ## Part 2 Answers
 
@@ -16,10 +23,10 @@ are needed to create a file locally (in your cloned repo)
 and push them (sync) with GitHub.  Only `git` commands are 
 valid answers
 
-1. git command to view the status of the repository:
-2. git command example to add a file for tracking:
-3. git command to commit changes:
-4. git command to sync local commits with GitHub:
+1. git command to view the status of the repository: "git status"
+2. git command example to add a file for tracking: "git add filename.txt" or "git add ." to add all
+3. git command to commit changes: ' git commit -m "COMMIT MESSAGE" '
+4. git command to sync local commits with GitHub: 
 5. git command to sync commits on GitHub to `clone`d repository:
 
 ## Part 3 Answers
