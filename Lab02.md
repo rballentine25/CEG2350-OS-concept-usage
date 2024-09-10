@@ -1,4 +1,7 @@
 ## Lab 02
+// completed: 1, 2, 3, 
+// in progress: 4
+// not done: 5, 6
 
 - Name: Rachael Ballentine
 - Email: ballentine.7@wright.edu
