@@ -5,16 +5,26 @@
 
 ## Part 1 Answers
 
-1. Command & steps to create an SSH key pair:
-* enter "ssh-keygen -t ed25519" into WSL and enter a password (or don't)
+1. Command & steps to create an SSH key pair
+```
+1. in WSL: ssh-keygen -t ed25519
+2. choose where to save the key files (enter for default, or path for new file)
+3. enter a password (or don't)
+```
 
-2. Steps to add public key to GitHub profile:
-* enter "cat .ssh/id_ed25519.pub" to see public key. copy entire file
-* open GitHub and go to settings -> ssh keys -> create new keypair
-* create a title and paste contents of id_ed25519.pub (public key)
+3. Steps to add public key to GitHub profile:
+```
+1. in WSL: cat .ssh/id_ed25519.pub
+2. copy contents of id_ed25519.pub (the public key)
+3. open GitHub and go to settings -> ssh keys -> create new keypair
+4. create a title and paste contents of id_ed25519.pub (public key)
+5. save
+```
 
 3. git command to clone repository: 
-* git clone git@github.com:WSU-kduncan/ceg2350f24-rballentine25.git
+```
+git clone git@github.com:WSU-kduncan/ceg2350f24-rballentine25.git
+```
 
 ## Part 2 Answers
 
@@ -23,35 +33,55 @@ are needed to create a file locally (in your cloned repo)
 and push them (sync) with GitHub.  Only `git` commands are 
 valid answers
 
-1. git command to view the status of the repository: "git status"
-2. git command example to add a file for tracking: "git add filename.txt" or "git add ." to add all
-3. git command to commit changes: ' git commit -m "COMMIT MESSAGE" '
-4. git command to sync local commits with GitHub: 
-5. git command to sync commits on GitHub to `clone`d repository:
+1. git command to view the status of the repository:
+   <br> ``` "git status" ```
+3. git command example to add a file for tracking:
+   <br> ``` "git add filename.txt" ``` for an individual file or ``` "git add ." ```to add all 
+5. git command to commit changes:
+   <br> ``` git commit -m "COMMIT MESSAGE" ```
+7. git command to sync local commits with GitHub:
+   <br> ``` git push ```
+9. git command to sync commits on GitHub to `clone`d repository:
+   <br> ``` git pull ```
 
 ## Part 3 Answers
 
 1. `chmod u+r bubbles.txt`
-    - Means: 
+    - Means: give user permission to read bubbles.txt
 2. `chmod u=rw,g-w,o-x banana.cabana`
-    - Means: 
+    - Means: give user exclusive permission to read and write, remove group permission to write, remove others permission to execute on file banana.cabana 
 3. `chmod a=w snow.md`
-    - Means: 
+    - Means: give all (user, groups, and other) exclusive permission to write on snow.md (all groups are allowed to write, but not read or execute)
 4. `chmod 751 program`
     - Means: 
 5. `chmod -R ug+w share`
-    - Means: 
+    - Means: recursively give users and groups permission to write on the directory "share"
 
 ## Part 4 Answers
 
-1. Command to create new user: 
-2. Path to user's home directory: 
-3. Evaluate if `ubuntu` can add files to user's home directory:
-4. Command to switch to user:
-5. Command(s) to go to user's home directory:
-6. Evaluate if user can add files to user's home directory:
-7. Command to switch to `ubuntu`:
-8. Command to return to `ubuntu` home directory: 
+1. Command to create new user:
+   <br>
+   ```
+   sudo adduser USERNAME
+   (may need to add --force-badname after adduser)
+   ```
+    or
+    ```
+   adduser USERNAME
+   sudo!!
+   ```
+   
+3. Path to user's home directory: 
+4. Evaluate if `ubuntu` can add files to user's home directory:
+5. Command to switch to user:
+<br>
+```
+sudo su USERNAME
+```
+7. Command(s) to go to user's home directory:
+8. Evaluate if user can add files to user's home directory:
+9. Command to switch to `ubuntu`:
+10. Command to return to `ubuntu` home directory: 
 
 ## Part 5 Answers
 
