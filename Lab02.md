@@ -1,10 +1,7 @@
 ## Lab 02
-// completed: 1, 2, 3, 
-// in progress: 4
-// not done: 5, 6
-
 - Name: Rachael Ballentine
 - Email: ballentine.7@wright.edu
+// date: 9/10/24
 
 ## Part 1 Answers
 
@@ -56,52 +53,43 @@ valid answers
 3. `chmod a=w snow.md`
     - Means: give all (user, groups, and other) exclusive permission to write on snow.md (all groups are allowed to write, but not read or execute)
 4. `chmod 751 program`
-    - Means: 
+    - Means: for the file "program", give users permission to read, write, and execute. give groups permissions to read and execute. give others permission to (only) execute. permissions would read:
+    ```- rwx r-x --x ```
 5. `chmod -R ug+w share`
     - Means: recursively give users and groups permission to write on the directory "share"
 
 ## Part 4 Answers
 
-1. Command to create new user:
-   <br>
-   ```
-   sudo adduser USERNAME
-   (may need to add --force-badname after adduser)
-   ```
-    or
-    ```
-   adduser USERNAME
-   sudo!!
-   ```
-   
-3. Path to user's home directory: 
-4. Evaluate if `ubuntu` can add files to user's home directory:
-5. Command to switch to user:
-<br>
-```
-sudo su USERNAME
-```
-7. Command(s) to go to user's home directory:
-8. Evaluate if user can add files to user's home directory:
-9. Command to switch to `ubuntu`:
-10. Command to return to `ubuntu` home directory: 
+1. Command to create new user: ``` sudo adduser USERNAME ``` 
+2. Path to user's home directory: ``` /home/rballentine ```
+3. Evaluate if `ubuntu` can add files to user's home directory: no, because the user's home directory is owned by the user, and permissions for groups and others are set to read and execute (group) or execute only (others)
+4. Command to switch to user: ``` sudo su rballentine ```
+5. Command(s) to go to user's home directory: ``` cd /home/rballentine ```
+6. Evaluate if user can add files to user's home directory: yes, the user can add files to their own directory. this is because the user owns the directory, and the permissions are set to read, write, execute for the user
+7. Command to switch to `ubuntu`: ```exit```
+8. Command to return to `ubuntu` home directory: ``` cd /home/ubuntu```
 
 ## Part 5 Answers
 
 For each, write the command used or answer the question posed.
 
-1. Command to create group named `crew`:
-2. Command(s) to add `ubuntu` & user to group `crew`:
-3. Command to modify `share` to have group ownership of `crew`:
-4. Command to switch to user:
-5. Command to add file to `share`: 
-6. Evaluate why these steps allowed the above action:
+1. Command to create group named `crew`: ``` sudo addgroup crew```
+2. Command(s) to add `ubuntu` & user to group `crew`: 
+<br>
+```
+sudo usermod –aG crew ubuntu
+sudo usermod -aG crew rballentine
+```
+3. Command to modify `share` to have group ownership of `crew`: ``` sudo chgrp crew . ```
+4. Command to switch to user: ``` su rballentine ```
+5. Command to add file to `share`: ``` touch carrots.txt ```
+6. Evaluate why these steps allowed the above action: this was successful because groups were given permissions to read, write, and execute. the file that rballentine made is owned by that user though, so unless the I specifically gave the group crew access to that file, then rballentine would still be the only one able to access it even though it is inside the folder with group permissions
 
 ## Part 6 Answers
 
 For each, write the command used or answer the question posed.
 
-1. Command to create file using `sudo`: 
-2. Evaluate (in plain text) the permission of the file: 
-3. Provide a method to edit the file without modifying permissions: 
-4. Command(s) to modify permissions:
+1. Command to create file using `sudo`: ``` sudo touch /home/ubuntu/sudowho.txt```
+2. Evaluate (in plain text) the permission of the file: user has read and write permissions, but not execute. groups and others have exclusive read permissions
+3. Provide a method to edit the file without modifying permissions: ``` sudo vim sudowho.txt ```
+4. Command(s) to modify permissions: ``` sudo chown ubuntu:crew sudowho.txt```
