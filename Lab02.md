@@ -1,7 +1,7 @@
 ## Lab 02
 - Name: Rachael Ballentine
 - Email: ballentine.7@wright.edu
-// date: 9/10/24
+- Date: 9/10/24
 
 ## Part 1 Answers
 
@@ -34,9 +34,9 @@ and push them (sync) with GitHub.  Only `git` commands are
 valid answers
 
 1. git command to view the status of the repository:
-   <br> ``` "git status" ```
+   <br> ``` git status ```
 3. git command example to add a file for tracking:
-   <br> ``` "git add filename.txt" ``` for an individual file or ``` "git add ." ```to add all 
+   <br> ``` git add filename.txt ``` for an individual file or ``` git add . ```to add all 
 5. git command to commit changes:
    <br> ``` git commit -m "COMMIT MESSAGE" ```
 7. git command to sync local commits with GitHub:
@@ -60,36 +60,35 @@ valid answers
 
 ## Part 4 Answers
 
-1. Command to create new user: ``` sudo adduser USERNAME ``` 
-2. Path to user's home directory: ``` /home/rballentine ```
-3. Evaluate if `ubuntu` can add files to user's home directory: no, because the user's home directory is owned by the user, and permissions for groups and others are set to read and execute (group) or execute only (others)
-4. Command to switch to user: ``` sudo su rballentine ```
-5. Command(s) to go to user's home directory: ``` cd /home/rballentine ```
-6. Evaluate if user can add files to user's home directory: yes, the user can add files to their own directory. this is because the user owns the directory, and the permissions are set to read, write, execute for the user
-7. Command to switch to `ubuntu`: ```exit```
-8. Command to return to `ubuntu` home directory: ``` cd /home/ubuntu```
+1. Command to create new user: <br>``` sudo adduser rballentine ``` 
+2. Path to user's home directory: <br>``` /home/rballentine ```
+3. Evaluate if `ubuntu` can add files to user's home directory: <br>no, because the user's home directory is owned by the user, and permissions for groups and others are set to read and execute (group) or execute only (others)
+4. Command to switch to user:<br> ``` sudo su rballentine ```
+5. Command(s) to go to user's home directory:<br> ``` cd /home/rballentine ```
+6. Evaluate if user can add files to user's home directory: <br>yes, the user can add files to their own directory. this is because the user owns the directory, and the permissions are set to read, write, execute for the user
+7. Command to switch to `ubuntu`: <br>```exit```
+8. Command to return to `ubuntu` home directory: <br>``` cd /home/ubuntu```
 
 ## Part 5 Answers
 
 For each, write the command used or answer the question posed.
 
-1. Command to create group named `crew`: ``` sudo addgroup crew```
+1. Command to create group named `crew`: <br>``` sudo addgroup crew```
 2. Command(s) to add `ubuntu` & user to group `crew`: 
-<br>
 ```
 sudo usermod –aG crew ubuntu
 sudo usermod -aG crew rballentine
 ```
-3. Command to modify `share` to have group ownership of `crew`: ``` sudo chgrp crew . ```
-4. Command to switch to user: ``` su rballentine ```
-5. Command to add file to `share`: ``` touch carrots.txt ```
-6. Evaluate why these steps allowed the above action: this was successful because groups were given permissions to read, write, and execute. the file that rballentine made is owned by that user though, so unless the I specifically gave the group crew access to that file, then rballentine would still be the only one able to access it even though it is inside the folder with group permissions
+3. Command to modify `share` to have group ownership of `crew`: <br> ``` sudo chgrp crew . ```
+4. Command to switch to user: <br>``` su rballentine ```
+5. Command to add file to `share`: <br>``` touch carrots.txt ```
+6. Evaluate why these steps allowed the above action: <br>this was successful because groups were given permissions to read, write, and execute. the file that rballentine made is owned by that user though, so unless the I specifically gave the group crew access to that file, then rballentine would still be the only one able to access it even though it is inside the folder with group permissions
 
 ## Part 6 Answers
 
 For each, write the command used or answer the question posed.
 
-1. Command to create file using `sudo`: ``` sudo touch /home/ubuntu/sudowho.txt```
-2. Evaluate (in plain text) the permission of the file: user has read and write permissions, but not execute. groups and others have exclusive read permissions
-3. Provide a method to edit the file without modifying permissions: ``` sudo vim sudowho.txt ```
-4. Command(s) to modify permissions: ``` sudo chown ubuntu:crew sudowho.txt```
+1. Command to create file using `sudo`: <br>``` sudo touch /home/ubuntu/sudowho.txt```
+2. Evaluate (in plain text) the permission of the file: <br>user has read and write permissions, but not execute. groups and others have exclusive read permissions
+3. Provide a method to edit the file without modifying permissions: <br>``` sudo vim sudowho.txt ```
+4. Command(s) to modify permissions: <br>``` sudo chown ubuntu:crew sudowho.txt```
