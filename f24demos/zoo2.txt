@@ -1,0 +1,6 @@
+lion
+bear
+flamingo
+cabybara
+zebra
+fish
