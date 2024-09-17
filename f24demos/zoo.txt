@@ -1,6 +1,10 @@
-hippo
 giraffe
+elephant
+lion
 zebra
+hippo
+kapybarra
 lion
 tiger
-monkey
+bears
+
