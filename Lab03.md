@@ -25,17 +25,17 @@ Host 2350
 ## Part 2 Answers
 
 1. `printenv HOME > thishouse`
-   - Explanation: 
+   - Explanation: `printenv` prints values of environment variables. in this case, prints the value of `HOME` variable (path to the HOME directory) to a file named `thishouse`, so the file now contains `/home/rballentine`
 2. `cat doesnotexist 2>> hush.txt`
-   - Explanation: 
+   - Explanation: `cat` prints a file to standard output. `2>>` appends (not replace) only error output to the indicated file. this line redirects and appends the error output of `doesnotexist` to the file `hush.txt`. 
 3. `cat nums.txt | sort -n >> all_nums.txt`
-   - Explanation: 
-4. `cat << "DONE" > here.txt`
-   - Explanation: 
+   - Explanation: ```|``` is pipe, which means that output from the first command (`cat nums.txt`) will be passed as input to the next command. `sort -n` sorts lines of text files, in this case numerically as indicated by the flag. this output is appended to the file `all_num.txt` because of the `>>` operator, so that the file now contains the sorted values entered in `nums.txt`
+4. `cat << "DONE" > here.txt` 
+   - Explanation: `<<` takes in user input until the delimiter is reached, which here is `DONE`. the output from `cat` is then redirected to the file `here.txt`, so the file contains the user input
 5. `ls -lt ~ | head`
-   - Explanation: 
+   - Explanation: `ls` lists directory contents. `-lt` flags mean use long listing format (`l`) and sort by time, newest first (`t`). The tilda is shorthand for the home directory. `| head` is asking for the first 10 lines (`head`) of the last command, so the result of this line is the first 10 lines of the files in the home directory is outputted to console, ordered by time. 
 6. `history | grep ".md"`
-   - Explanation: 
+   - Explanation: `history` lists recent commands to the console. `grep ".md"` searches for patterns in the given input, here looking for `".md"`. the result is that all recent commands that include the phrase ".md" are listed to the console
 
 ## Part 3
 
