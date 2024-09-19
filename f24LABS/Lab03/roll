@@ -1,20 +1,37 @@
 #!/usr/bin/bash
 
-# Part 3 task 5
+# Part 3 task 6
 
-# if there were no cmd args or the entered cmd arg was less than 1, prompt for input until valid input is given. if a valid cmd arg was entered, assign it to user_num
-if [ $# -eq 0 ] || [ $1 -lt 1 ]; then
-	read -p "Please enter an upper limit for your roll (>1): " user_num
-	
-	# checking that input is valid: if user_num is <1, while loop prompts for input until user_num is >1
-	while [ $user_num -lt 1 ]; do
-		read -p "Invalid input: roll upper limit must be >1. try again: " user_num
-	done	
-
+# if the number of entered cmd args is NOT 2, set num_dice and num_sides to zero so the user prompt while loop is entered. otherwise if the correct num of cmd args was entered, set the first to num_dice and the second to num_sides
+if [ $# -ne 2 ]; then
+	num_dice=0
+	num_sides=0
 else
-	user_num=$1
-fi 
+	num_dice=$1
+	num_sides=$2
+fi
 
-# creating a random number between 1 and 20: RANDOM creates rand num between 0 and 32767, so use modulo and +1 to get desired range                                      
-rand_num=$(( 1 + $RANDOM % $user_num ))
-echo "rolling between 1 and $user_num: you rolled a $rand_num!"
+# check for valid input: if either of the variables is invalid (<1), then prompt for new inputuntil both are valid
+while [ $num_dice -lt 1 ] || [ $num_sides -lt 1 ]; do
+	echo "Please enter valid numbers (>1) for number of dice and sides per dice."
+        read -p "Number of dice: " num_dice
+        read -p "Number of sides for each die: " num_sides
+done
+
+# next while loop appends the dice value output string. using a while loops with conditionals, since the number of dice will change each time the script is run
+outputstring=""
+count=1
+rand_num=0
+
+# inside the while loop:generate a random number between 1 and num_sides for each die, append die roll info to the output string for the current die, and increment count (keeps track of the current die). exit the loop after cycling through all the dies
+while [ $count -le $num_dice ]; do
+	rand_num=$(( 1 + $RANDOM % num_sides ))
+	outputstring+="Dice $count rolled a $rand_num \n"
+	count=$(( $count + 1 ))
+done
+
+# after generating all rolls, print the num of dice, num of sides, and appended roll into string
+echo "Rolling $num_dice dice with $num_sides sides each: "
+echo -e "$outputstring"
+
+# done!
