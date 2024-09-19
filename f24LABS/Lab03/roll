@@ -1,18 +1,22 @@
 #!/usr/bin/bash
 
+# Part 3 task 4
 
-# '$#' outputs the total number of cmd line arguments. if the number is zero, no cmd args
-# were entered (output error msg)
-if [ $# -eq 0 ]; then
-	echo "error: upper roll limit was not provided from the command line"
+# 1st if: '$#' outputs the total number of cmd line arguments. if the number is not equal to zero (ie at least one cmd arg was entered), then assign the first arg to user_num. otherwise, prompt user for input
 
-#if [ $user_num -lt 1 ]; then
-        #echo "error: your number was less than 1"
-
+if [ $# -ne 0 ]; then
+	user_num=$1
 else 
-	# creating a random number between 1 and 20: RANDOM creates rand num between
-	# 0 and 32767, so use modulo and +1 to get desired range
+	read -p "Please enter an upper limit for your roll (>1): " user_num
+fi
+
+
+# 2nd if: if input is <1, output error. otherwise, generate random num and output
+if [ $user_num -lt 1 ]; then
+        echo "error: your number was less than 1"
+else 
+	# creating a random number between 1 and 20: RANDOM creates rand num between 0 and 		32767, so use modulo and +1 to get desired range
 	# command line args: $1 indicates the first cmd argument entered
-	rand_num=$(( 1 + $RANDOM % $1 ))
-	echo "rolling between 1 and $1: you rolled a $rand_num!"
+	rand_num=$(( 1 + $RANDOM % $user_num ))
+	echo "rolling between 1 and $user_num: you rolled a $rand_num!"
 fi
