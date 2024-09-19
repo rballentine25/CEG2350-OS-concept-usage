@@ -1,15 +1,15 @@
 ## Lab 03
 
-- Name: Rachael
+- Name: Rachael Ballentine
 - Email: ballentine.7@wright.edu
-- Date: 9/18/24
+- Date: 9/19/24
 
 ## Part 1 Answers
 
-1. `ssh` command before configuring `config` file: ```ssh -i ceg2350key.pem ubuntu@52.73.170.36```
-3. HostName: 52.73.170.36
-4. User: ubuntu
-5. IdentityFile: /home/rballentine/ceg2350key.pem
+1. `ssh` command before configuring `config` file:  `ssh -i ceg2350key.pem ubuntu@52.73.170.36`
+3. HostName: `52.73.170.36`
+4. User: `ubuntu`
+5. IdentityFile: `/home/rballentine/ceg2350key.pem`
 6. `~/.ssh/config` contents:
 
 ```
@@ -89,3 +89,4 @@ ln -s /home/ubuntu/ceg2350f24-rballentine25/f24LABS/Lab03/roll roll
 ## Extra Credit
 
 1. Note here *what* you did to the script for the extra credit.
+<br> `N/A`
