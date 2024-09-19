@@ -52,22 +52,39 @@ Verify that `roll` made it to your GitHub repository for this course and is in y
 
 ## Part 5 Answers
 
-1. PATH =
+1. PATH = `/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin`
 2. To set condition to `true`, I need to...
-3. Command(s):
-4. PATH =
-   - Difference:
+   ` create a directory named bin if there isn't already one and move the file to that bin`
+3. Command(s): 
+```
+cd ~
+mkdir bin
+```
+4. PATH = `/home/ubuntu/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin`
+   - Difference: `theres now a path to the new bin I created at the beginning of the PATH variable`
 5. Command(s):
-6. Commands & modification explanations: 
+```
+pwd bin
+cd ceg2350f24-rballentine25/f24LABS/Lab03/
+cp roll /home/ubuntu/bin/
+```
+or to do symbolic link (it wouldn't let me make a hard link)
+```
+pwd roll
+cd ~
+cd bin
+ln -s /home/ubuntu/ceg2350f24-rballentine25/f24LABS/Lab03/roll roll
+```
+6. Commands & modification explanations: `chmod 711` so that all can execute from wherever
 7. Script permission breakdown
    - User
-      - must be:
-      - has permissions to:
+      - must be: ` ? i dont understand the question`
+      - has permissions to: `read, write, execute`
    - Group
       - must be:
-      - has permissions to:
+      - has permissions to: `execute`
    - Other
-      - has permissions to:
+      - has permissions to: `execute`
 
 ## Extra Credit
 
