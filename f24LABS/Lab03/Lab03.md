@@ -44,11 +44,11 @@ Verify that `roll` made it to your GitHub repository for this course and is in y
 ## Part 4 - Retrospective Answers
 
 1. Where and when did it go wrong while working on your script tasks?
-> Your reflection here
+> When writing the first if conditionals, I was trying to check not equal and I wrote `-nq` instead of `-ne` and couldn't figure out why I was getting an error message for a while. then later in part 6 I was trying to use a newline character (`\n`) and it wasn't showing up in echo, so I tried `/n` and that did something else weird. I had to look up the echo flags and use `-e` to get the newline char to show, but I was stuck on that for a while. I'm sure there was other stuff but I don't rememebr
 2. Was anything familiar working with a new language compared to one you are used to?
-> Your reflection here
+> I mean the basic concepts are still the same but there are a lot of differences between bash and what i'm used to, which is mostly java/python/matlab. i don't like that variables and conditionals don't work without correct spacing
 3. Did you write good `commit` messages that refer to what tasks were completed at each commit?  What would you improve?
-> Your reflection here
+> i just named them "finished part 3.#". i would be more descriptive if i weren't specifically only committing when certain pre-outlined tasks were completed 
 
 ## Part 5 Answers
 
