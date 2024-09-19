@@ -1,14 +1,18 @@
 #!/usr/bin/bash
 
-# read: reads in from standard input until the enter delimiter is used and 
-# puts the input into the specified variable
-read -p "Please enter an upper limit for your roll (>1): " user_num
 
-if [ $user_num -lt 1 ]; then
-	echo "error: your number was less than 1"
+# '$#' outputs the total number of cmd line arguments. if the number is zero, no cmd args
+# were entered (output error msg)
+if [ $# -eq 0 ]; then
+	echo "error: upper roll limit was not provided from the command line"
+
+#if [ $user_num -lt 1 ]; then
+        #echo "error: your number was less than 1"
+
 else 
 	# creating a random number between 1 and 20: RANDOM creates rand num between
 	# 0 and 32767, so use modulo and +1 to get desired range
-	rand_num=$(( 1 + $RANDOM % $user_num ))
-	echo "rolling between 1 and $user_num: you rolled a $rand_num!"
+	# command line args: $1 indicates the first cmd argument entered
+	rand_num=$(( 1 + $RANDOM % $1 ))
+	echo "rolling between 1 and $1: you rolled a $rand_num!"
 fi
