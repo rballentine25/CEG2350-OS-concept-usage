@@ -1,3 +1,4 @@
 #!/usr/bin/bash
 
-echo "you rolled a ##!"
+rand_num=$(( 1 + $RANDOM % 20 ))
+echo "you rolled a $rand_num!"
