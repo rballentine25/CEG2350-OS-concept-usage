@@ -1,7 +1,8 @@
 ## Lab 04
 
-- Name:
-- Email
+- Name: Rachael Ballentine
+- Email: ballentine.7@wright.edu
+- Date: 9/25/24
 
 ## Part 1 - Task Tracker
 
