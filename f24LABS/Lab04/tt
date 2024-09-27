@@ -32,7 +32,7 @@ case $action in
 		promptForDescription "$@"
 
 		# append the given task description to the task list and tell user it was added
-		echo $description >> "$HOME/.tasks"
+		echo "- $description" >> "$HOME/.tasks"
 		echo "task '$description' was added to task list."
 		;;
 	complete)
@@ -53,7 +53,8 @@ case $action in
 		echo "task '$description' marked as completed and removed from task list."
 		;;
 	view)
-		echo "view"
+		echo "All current tasks:"
+		cat "$HOME/.tasks"
 		;;
 	clear) 
 		echo "clear"
