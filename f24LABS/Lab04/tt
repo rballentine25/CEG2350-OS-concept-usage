@@ -1,26 +1,40 @@
 #!/usr/bin/bash
 
+# Rachael Ballentine
+# CEG2350 Lab04, 9/27/24
+
+description=0
+
+promptForDescription() {
+	if [[ $# -lt 2 ]]; then
+        	read -p "Please provide a task description: " description
+        else
+        	description=$2
+        fi
+}
+
+# checking for arguments: if no command line args given, exit. 
 if [[ $# == 0 ]]; then
 	echo "No arguments detected. Please try again"
 	exit
 fi
 
+# if there was at least one arg, assign it to action and create the task file
 action=$1
 touch $HOME/.tasks
 
+# case statement to determine what function was entered as input
 case $action in
 	add)
-		if [[ $# -lt 2 ]]; then
-			read -p "Please provide a description for the task: " description
-		else 
-			description=$2
-		fi
+		# if no task description was given as second arg, prompt for one and read in
+		promptForDescription "$@"
 
+		# append the given task description to the task list and tell user it was added
 		echo $description >> $HOME/.tasks
 		echo "task '$description' was added to task list."
 		;;
 	complete)
-		echo "complete"
+		promptForDescription "$@"
 		;;
 	view)
 		echo "view"
@@ -36,4 +50,5 @@ case $action in
 		exit
 		;;
 	esac 
+
 
