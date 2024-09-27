@@ -5,7 +5,9 @@
 
 description=0
 
+# for this function to work, it has to be passed all command line args (#@)
 promptForDescription() {
+	# check if there are 2 command line args
 	if [[ $# -lt 2 ]]; then
         	read -p "Please provide a task description: " description
         else
@@ -21,7 +23,7 @@ fi
 
 # if there was at least one arg, assign it to action and create the task file
 action=$1
-touch $HOME/.tasks
+touch "$HOME/.tasks"
 
 # case statement to determine what function was entered as input
 case $action in
@@ -30,11 +32,25 @@ case $action in
 		promptForDescription "$@"
 
 		# append the given task description to the task list and tell user it was added
-		echo $description >> $HOME/.tasks
+		echo $description >> "$HOME/.tasks"
 		echo "task '$description' was added to task list."
 		;;
 	complete)
+		# if not task description given, prompt for one
 		promptForDescription "$@"
+
+		# use grep to search for the task: -q means grep doesn't print matches to output. using grep for this since it gives an exit code based on whether it found the search term or not
+		grep -q "$description" "$HOME/.tasks"
+
+		# result of last executed command is in #?. since grep was just run, its exit code (whether it was successful or not) will be in #?. if it found the search term, it will return 0. if it didn't, it will return 1
+		if [[ $? == 1 ]]; then 
+			echo "Task not found."
+			exit 
+		fi 
+		
+		# if the task was found, use sed to delete it permanently with -i and d
+		sed -i "/$description/d" $HOME/.tasks
+		echo "task '$description' marked as completed and removed from task list."
 		;;
 	view)
 		echo "view"
