@@ -1,2 +1,39 @@
 #!/usr/bin/bash
 
+if [[ $# == 0 ]]; then
+	echo "No arguments detected. Please try again"
+	exit
+fi
+
+action=$1
+touch $HOME/.tasks
+
+case $action in
+	add)
+		if [[ $# -lt 2 ]]; then
+			read -p "Please provide a description for the task: " description
+		else 
+			description=$2
+		fi
+
+		echo $description >> $HOME/.tasks
+		echo "task '$description' was added to task list."
+		;;
+	complete)
+		echo "complete"
+		;;
+	view)
+		echo "view"
+		;;
+	clear) 
+		echo "clear"
+		;;
+	help)
+		echo "help"
+		;;
+	*) 
+		echo "Invalid argument given"
+		exit
+		;;
+	esac 
+
