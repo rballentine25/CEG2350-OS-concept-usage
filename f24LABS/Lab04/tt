@@ -57,7 +57,14 @@ case $action in
 		cat "$HOME/.tasks"
 		;;
 	clear) 
-		echo "clear"
+		read -p "Do you really want to clear your task list? Did you actually do everything... [Y/N]: " hmm
+		if [[ $hmm == "N" ]]; then 
+			echo "Yeah didn't think so"
+			exit
+		fi
+
+		rm $HOME/.tasks
+		echo "All tasks removed."
 		;;
 	help)
 		echo "help"
