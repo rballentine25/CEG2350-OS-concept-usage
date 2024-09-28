@@ -2,7 +2,7 @@
 
 - Name: Rachael Ballentine
 - Email: ballentine.7@wright.edu
-- Date: 9/25/24
+- Date: 9/27/24
 
 ## Part 1 - Task Tracker
 
@@ -13,9 +13,11 @@ Verify that `tt` made it to your GitHub repository for this course and is in you
 ------
 ## Task Tracker User Guide
 ### Name 
-`tt` is a task tracker capable of adding, completing, clearing, and keeping track of a list of tasks
+`tt` is a task tracker capable of adding, completing, clearing, and keeping track of a list of tasks  
+tt can also be accessed by using the `tasktracker` hard link
 ### Usage
 `bash tt [ACTION] [TASK DESCRIPTION]`  
+`tasktracker [ACTION] [TASK DESCRIPTION]`  
 *An action must be given for the script to run.*  
 
 ### Available Actions
@@ -93,14 +95,19 @@ AUTHOR
 
 ## Part 3 - PATH for all
 
-- Chosen PATH directory:  
-- Link preference (hard or symbolic):
+- Chosen PATH directory:  `/usr/games`
+- Link preference (hard or symbolic): `hard`
    - Justification of preference for this use case:
+  `Symbolic links break if the original file is moved or deleted. I would rather use a hard link so I don't have to worry about this, and so that I have a backup of the file on the filesystem. `
 - Command to create link:
-- Notes about permissions modified: 
-- How you tested that you can run `tt` from anywhere on filesystem:
-- How you tested that other users can run `tt`:
+```
+# from the folder that the original tt file was located:
+sudo ln tt /usr/games/tasktracker
+ ```
+- Notes about permissions modified: `no additional modifications were needed, since I'd already run 'chmod a+x' on the original tt file`
+- How you tested that you can run `tt` from anywhere on filesystem: `went home using cd~ and ran from there, also ran from random other folders within my cloned repo`
+- How you tested that other users can run `tt`: `logged into user named 'sally' from lecture notes? previous lab? idk. sally could run tasktracker from home directory and /usr/bin`
 
 ## Extra Credit
 
-Note here *what* you did to the script for the extra credit and provide additional demonstrations.
+N/A
