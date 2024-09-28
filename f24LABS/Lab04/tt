@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 # Rachael Ballentine
-o# CEG2350 Lab04, 9/27/24
+# CEG2350 Lab04, 9/27/24
 
 
 # -------- FUNCTIONS --------
@@ -23,7 +23,9 @@ user-guide() {
 	echo "---------------------- TASK TRACKER USER GUIDE -----------------------"
 	echo "NAME"
 	echo -e "\ttt - is a task tracker capable of adding, completing, clearing, and keeping track of a list of tasks"
+	echo -e "\ttt can also be accessed by using the 'tasktracker' hard link"
 	echo "USAGE"
+	echo -e "\ttasktracker [ACTION] [TASK DESCRIPTION]"
 	echo -e "\tbash tt [ACTION] [TASK DESCRIPTION]"
 	echo -e "\tAn action must be given for the script to run."
 	echo ""
