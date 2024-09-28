@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 # Rachael Ballentine
-# CEG2350 Lab04, 9/27/24
+o# CEG2350 Lab04, 9/27/24
 
 
 # -------- FUNCTIONS --------
@@ -22,7 +22,7 @@ promptForDescription() {
 user-guide() {
 	echo "---------------------- TASK TRACKER USER GUIDE -----------------------"
 	echo "NAME"
-	echo -e "\ttt - use task tracker to keep track of tasks"
+	echo -e "\ttt - is a task tracker capable of adding, completing, clearing, and keeping track of a list of tasks"
 	echo "USAGE"
 	echo -e "\tbash tt [ACTION] [TASK DESCRIPTION]"
 	echo -e "\tAn action must be given for the script to run."
@@ -65,10 +65,12 @@ case $action in
 		# if not task description given, prompt for one
 		promptForDescription "$@"
 
-		# use grep to search for the task: -q means grep doesn't print matches to output. using grep for this since it gives an exit code based on whether it found the search term or not
+		# use grep to search for the task: -q means grep doesn't print matches to output. using grep for this 
+		# since it gives an exit code based on whether it found the search term or not
 		grep -q "$description" "$HOME/.tasks"
 
-		# result of last executed command is in #?. since grep was just run, its exit code (whether it was successful or not) will be in #?. if it found the search term, it will return 0. if it didn't, it will return 1
+		# result of last executed command is in #?. since grep was just run, its exit code (whether it was successful 
+		# or not) will be in #?. if it found the search term, it will return 0. if it didn't, it will return 1
 		if [[ $? == 1 ]]; then 
 			echo "Task not found."
 			exit 
