@@ -3,8 +3,9 @@
 # Rachael Ballentine
 # CEG2350 Lab04, 9/27/24
 
-description=0
 
+# -------- FUNCTIONS --------
+# this function checks to see how many command line args were given and prompts for input if there weren't 2
 # for this function to work, it has to be passed all command line args (#@)
 promptForDescription() {
 	# check if there are 2 command line args
@@ -15,9 +16,34 @@ promptForDescription() {
         fi
 }
 
+# user-guide function outputs the user guide using echo and printf.
+# printf is used for the actions for prettier formatting. a field width of 10 characters was used, since 
+# the largest word is complete
+user-guide() {
+	echo "---------------------- TASK TRACKER USER GUIDE -----------------------"
+	echo "NAME"
+	echo -e "\ttt - use task tracker to keep track of tasks"
+	echo "USAGE"
+	echo -e "\tbash tt [ACTION] [TASK DESCRIPTION]"
+	echo -e "\tAn action must be given for the script to run."
+	echo ""
+	echo "AVAILABLE ACTIONS"
+	printf "\t%-10s %s \n" "add" "add a new task to the task list"
+	printf "\t%-10s %s \n" "complete" "mark a task as complete and remove from task list"
+	printf "\t%-10s %s \n" "view" "print all tasks on the task list"
+	printf "\t%-10s %s \n" "clear" "remove all tasks from task list (delete list)"
+	printf "\t%-10s %s \n" "help" "print the file user guide"
+	echo ""
+	echo "AUTHOR"
+	echo -e "\tWritten by Rachael Ballentine."
+}
+
+
+# --------- MAIN CODE --------
 # checking for arguments: if no command line args given, exit. 
 if [[ $# == 0 ]]; then
-	echo "No arguments detected. Please try again"
+	echo -e "No arguments detected. Please try again. \n"
+	user-guide
 	exit
 fi
 
@@ -67,7 +93,7 @@ case $action in
 		echo "All tasks removed."
 		;;
 	help)
-		echo "help"
+		user-guide
 		;;
 	*) 
 		echo "Invalid argument given"
