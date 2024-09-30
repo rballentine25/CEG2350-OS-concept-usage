@@ -14,9 +14,13 @@ else
 	exit 
 fi
 
+# sorting and removing duplicates -> clean1
 sort $filename | uniq > clean1.txt
-echo "clean1 now contains:"
-cat clean1.txt
+
+# removing emails that dont start with a-z, 0-9
+grep -P "^\w" clean1.txt > clean2.txt
+echo "CLEAN2 NOW CONTAINS:"
+cat clean2.txt
 
 
 
