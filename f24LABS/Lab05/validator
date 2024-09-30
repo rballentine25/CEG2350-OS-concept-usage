@@ -19,8 +19,8 @@ sort $filename | uniq > clean1.txt
 
 # removing emails that dont start with a-z, 0-9
 grep -P "^\w" clean1.txt > clean2.txt
-echo "CLEAN2 NOW CONTAINS:"
-cat clean2.txt
+
+grep -P "\W{2,}" clean2.txt > clean3.txt
 
 
 

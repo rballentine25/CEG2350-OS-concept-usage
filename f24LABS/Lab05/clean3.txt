@@ -1,0 +1,8 @@
+bob..smith@example.net
+chris.anderson@example..com 
+david.miller@ example.com 
+invalid-email@.com
+jennifer.brown@ example .com 
+lisa.johnson@ 
+sarah.jackson@.com 
+user@company..org
