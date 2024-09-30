@@ -1,0 +1,43 @@
+#_#@happy.face
+#bringit@bomb.com
+$$$bills@money.want
+123john.doe@example.com
+123user@example.com
+9876user@example.net
+?hello@gmail.com
+admin@123.456
+admin@website.com
+alice smith@example.com 
+alice.smith@example.com
+alice_smith123@company.org
+bob&jones@example.com 
+bob..smith@example.net
+bob_jones@example.com
+charlie_brown@peanuts.com
+chris.anderson@example..com 
+chris.anderson@example.com
+david.miller@ example.com 
+david.miller@example.com
+emily.white@example.com
+emily@white@example.com 
+invalid-email.com
+invalid-email@.com
+jennifer.brown@ example .com 
+jennifer.brown@example.com
+jenny.smith@123.co.uk
+john.doe@example 
+john.doe@example.com
+johndoe@company
+lisa.johnson@ 
+lisa.johnson@example.com
+mark.wilson@example,com 
+mark.wilson@example.com
+mike_tyson@boxing
+sarah.connor@gmail.com
+sarah.jackson@.com 
+sarah.jackson@example.com
+support@company
+support@company.org
+user123@example.co.uk
+user@company..org
+user@company.org

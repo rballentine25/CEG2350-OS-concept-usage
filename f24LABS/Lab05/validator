@@ -1,0 +1,23 @@
+#!/usr/bin/bash
+
+if [[ $# == 0 ]]; then
+	read -p "Enter a filename: " filename
+else
+	filename=$1
+fi
+
+if [[ -f $filename ]]; then
+	echo "file exists"
+
+else 
+	echo "file does not exist"
+	exit 
+fi
+
+sort $filename | uniq > clean1.txt
+echo "clean1 now contains:"
+cat clean1.txt
+
+
+
+
