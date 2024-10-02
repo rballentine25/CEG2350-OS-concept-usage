@@ -7,7 +7,7 @@ else
 fi
 
 if [[ -f $filename ]]; then
-	echo "file exists"
+	echo "file exists. processing..."
 
 else 
 	echo "file does not exist"
@@ -20,7 +20,10 @@ sort $filename | uniq > clean1.txt
 # removing emails that dont start with a-z, 0-9
 grep -P "^\w" clean1.txt > clean2.txt
 
-grep -P "\W{2,}" clean2.txt > clean3.txt
+# removing emails with consecutive non-alphanumerics
+# -v is invert match, so only sends what DOESNT match the pattern to the file
+grep -Pv "\W{2,}" clean2.txt > clean3.txt
+
 
 
 
