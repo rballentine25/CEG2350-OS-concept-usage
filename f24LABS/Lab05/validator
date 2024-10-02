@@ -1,11 +1,15 @@
 #!/usr/bin/bash
 
+# if a commant line arg was given, assign it to filename. otherwise, 
+# prompt user for input. 
 if [[ $# == 0 ]]; then
 	read -p "Enter a filename: " filename
 else
 	filename=$1
 fi
 
+# -f looks for a file with the specified name.  if the file is not 
+# found, print error msg
 if [[ -f $filename ]]; then
 	echo "file exists. processing..."
 
@@ -21,10 +25,17 @@ sort $filename | uniq > clean1.txt
 grep -P "^\w" clean1.txt > clean2.txt
 
 # removing emails with consecutive non-alphanumerics
-# -v is invert match, so only sends what DOESNT match the pattern to the file
+# -v is invert match, so only sends what DOESNT match the pattern to
+# the file
 grep -Pv "\W{2,}" clean2.txt > clean3.txt
 
+# only matching entries that end in valid domain, and filtering any 
+# matches that have weird symbols in the middle (only allowing ., -, _)
+grep -P "^\w+(\.|-|_)?\w+@\w+\.(com|net|org)" clean3.txt > clean4.txt
 
-
-
-
+echo ""
+echo "FINAL OUTPUT:"
+cat clean4.txt
+echo ""
+echo "FINAL LINE COUNT:"
+wc -l clean4.txt
