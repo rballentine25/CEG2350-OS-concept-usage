@@ -1,0 +1,47 @@
+#!/usr/bin/bash
+
+# getoptsexample -d source-name destination-name
+# getoptsexample -h 
+# 		print help exit
+# getoptsexample -f
+# 		whatver sl is
+
+function get-help {
+	echo "help help im being opressed"
+}
+
+while getopts ":hd:f" opt; do
+	#echo $opt
+	#echo $1
+	#echo $OPTIND
+	#echo $OPTARG
+	case $opt in 
+		h)
+			get-help
+			;;
+		d) 
+			val=$OPTARG
+			;;
+		f) 
+			sl
+			;;
+		?)
+			get-help
+			exit
+			;;
+
+		*) 	
+			get-help
+			exit
+			;;
+	esac
+done
+
+# to skip forward
+# option index will be 1 more forward than we want bc of loop iteration
+shift $(( OPTIND - 1 ))
+
+echo $1
+
+mv $val 
+

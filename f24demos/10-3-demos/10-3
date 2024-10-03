@@ -1,0 +1,19 @@
+#!/usr/bin/bash
+
+# shifty: exploring shift in relation to how getops works
+
+for i in "$@"; do
+	echo "$i"
+done
+
+# when you use shift, you can't use the previous value of the arg anymore
+echo ""
+echo $1
+shift
+echo $1
+shift 
+echo $1
+echo ""
+echo $0
+echo $-1
+
