@@ -24,8 +24,8 @@ Make sure the following files are in your GitHub repository
 1. `awk /^Bil/ { print $1 } records.txt`
 2. `awk '$4 ~ /42/ { print $3 }' records.txt`
 3. `awk '$3 ~ /@wright\.edu/ { print $2 ", " $1 ": " $3 }' records.txt`
-4. 
-5.
+4. `awk '$3 ~ /@wright\.edu/ && $6 ~ /1234/ { print $2 " favorite number is: " $4 }' records.txt`
+5. `awk '{$NF = "N0T@PL@!NP@$$W0RD" } { print $0 }' records.txt > updaterecords.txt`
 
 ## Extra Credit - Remove this if not doing
 
