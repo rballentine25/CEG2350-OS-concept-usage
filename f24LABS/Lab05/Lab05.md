@@ -1,7 +1,8 @@
 ## Lab 05
 
-- Name:
-- Email: 
+- Name: Rachael Ballentine
+- Email: ballentine.7@wright.edu
+- Date: 10/3/2024
 
 ## Part 1 
 
@@ -11,12 +12,12 @@ Make sure the following files are in your GitHub repository
 
 ## Part 2 Answers
 
-1. `place your sed commands between backtick characters`
-2. `so that they are pretty and readable in markdown`
-3. `replace these examples with your commands`
-4. `do this for rest of commands in lab`
-5.
-6. 
+1. `sed -E -i 's/<\/\w*>//g' sedfile.md`
+2. `sed -E -i 's/\s{,4}<li>/- /g' sedfile.md`
+3. `sed -i 's/<h1>/# /g' sedfile.md`
+4. `sed -i 's/<h2>/## /g' sedfile.md`
+5. `sed -E -i 's/<(ul|html)>//g' sedfile.md`
+6. `sed -i 's/B/M/g' sedfile.md`
 
 ## Part 3 Answers
 
