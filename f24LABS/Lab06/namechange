@@ -43,3 +43,12 @@ else
 	exit
 fi
 
+echo ""
+echo "using sed"
+# sed prints output unless -n flag is used
+# can save the new filename to new vari by enclosing whole thing in parens
+newname=$(echo $filename | sed -E "s/$find/$replace/g")
+echo "new filename: $newname"
+mv $filename $newname
+
+
