@@ -6,17 +6,21 @@ printHelp() {
 	echo -e "  -r The replacement text for the new filename"
 }
 
-while getopts ":hfr" opt; do
+# silent mode
+# require input for f and r but not h
+while getopts ":hf:r:" opt; do
 	case "$opt" in
 	h)
 		printHelp
 		exit
 		;;
 	f) 
-		#stuff
+		# find
+		find=$OPTARG
 		;;
 	r)
-		#stuff
+		# replace
+		replace=$OPTARG
 		;;
 	\?)
 		# invalid arguments given
@@ -24,3 +28,18 @@ while getopts ":hfr" opt; do
 		exit
 	esac
 done
+shift $(( OPTIND - 1 ))
+
+echo "find was $find"
+echo "replace was $replace"
+
+# finding/checking filename
+if [[ $# -ne 0 ]] &&  [[ -f $1 ]]; then
+	filename=$1
+	echo "filename was $filename"
+else
+	echo "User must provide valid filename."
+	printHelp
+	exit
+fi
+
