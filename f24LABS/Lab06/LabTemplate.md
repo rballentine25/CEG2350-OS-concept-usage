@@ -1,7 +1,8 @@
 ## Lab 06
 
-- Name:
-- Email
+- Name: Rachael Ballentine
+- Email: ballentine.7@wright.edu
+- Date: 10/11/24
 
 ## Part 2 - Retrospective
 
