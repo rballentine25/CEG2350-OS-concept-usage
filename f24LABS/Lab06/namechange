@@ -43,7 +43,7 @@ shift $(( OPTIND - 1 ))
 # if the number of args is NOT zero (there is at least one left) AND 
 # the file is found (-f in test), then assign the filename var.
 if [[ $# -ne 0 ]] &&  [[ -f $1 ]]; then
-	filename=$1
+	filename="$1"
 	echo "file \"$filename\" recognized."
 else
 	echo "User must provide valid filename."
@@ -56,6 +56,6 @@ fi
 # sed prints output unless -n flag is used. -E enables regex. s is for substitute
 # can save the new filename to new vari by enclosing whole thing in parens
 newname=$(echo $filename | sed -E "s/$find/$replace/g")
-mv $filename $newname
+mv "$filename" "$newname"
 echo "Renamed \"$filename\" to \"$newname\""
 
