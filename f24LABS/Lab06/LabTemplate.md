@@ -8,15 +8,20 @@
 
 1. 
 ```
-getopts is a tool to take in and deal with script-defined arguments. it uses a while loop within the bash script to define the desired options and deal with the input given to those arguments. arguments are passed on the command line when calling the sscript.
+getopts is a tool to take in and deal with script-defined arguments. it uses a while loop within the bash script to define
+the desired options and deal with the input given to those arguments. arguments are passed on the command line when calling
+the sscript.
 ```
 2.
 ```
-I had to look up a few more resources to understand how to use the getopts while loop, but my case statement was really simple so it wasn't too bad. I got stuck on using sed to change the filename for a while, but reading through the resources helped and I just kept messing with my script until it worked. 
+I had to look up a few more resources to understand how to use the getopts while loop, but my case statement was really
+simple so it wasn't too bad. I got stuck on using sed to change the filename for a while, but reading through the resources
+helped and I just kept messing with my script until it worked. 
 ```
 3. 
 ```
-I think it would be more useful if it could locate all the files with matching regex within a directory and change them all, like how sed functions for a script.
+I think it would be more useful if it could locate all the files with matching regex within a directory and change them
+all, like how sed functions for a script.
 ```
 
 ## Part 3 - namechange Usage Guide
