@@ -1,7 +1,26 @@
 #!/usr/bin/bash
 
 printHelp() {
-	echo -e "Usage: namechange -f find -r replace \"string to modify\" \n\t-f The text to find in the filename \n\t-r The replacement text for the new filename"
+	echo -e "Usage: namechange -f find -r replace \"string to modify\""
+	echo -e "  -f The text to find in the filename" 
+	echo -e "  -r The replacement text for the new filename"
 }
 
-printHelp
+while getopts ":hfr" opt; do
+	case "$opt" in
+	h)
+		printHelp
+		exit
+		;;
+	f) 
+		#stuff
+		;;
+	r)
+		#stuff
+		;;
+	\?)
+		# invalid arguments given
+		printHelp
+		exit
+	esac
+done
