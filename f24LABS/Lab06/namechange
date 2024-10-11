@@ -1,54 +1,61 @@
 #!/usr/bin/bash
+# Rachael Ballentine
+# CEG2350 Lab06
+# 10/11/24
 
+# printhelp function prints function guide to console
 printHelp() {
 	echo -e "Usage: namechange -f find -r replace \"string to modify\""
 	echo -e "  -f The text to find in the filename" 
 	echo -e "  -r The replacement text for the new filename"
 }
 
-# silent mode
+
+# silent mode: add colon before option string
 # require input for f and r but not h
 while getopts ":hf:r:" opt; do
 	case "$opt" in
 	h)
+		# if h flag is given, print help function ande xit
 		printHelp
 		exit
 		;;
 	f) 
-		# find
+		# assigns the find string to the find var. this is
+		# the string to look for in the filename
 		find=$OPTARG
 		;;
 	r)
-		# replace
+		# this is the string to replace the find string with later
 		replace=$OPTARG
 		;;
 	\?)
-		# invalid arguments given
+		# invalid option flags given: print help and exit
 		printHelp
 		exit
 	esac
 done
+# get opts stuff
 shift $(( OPTIND - 1 ))
 
-echo "find was $find"
-echo "replace was $replace"
 
-# finding/checking filename
+# finding/checking filename: does it exist????
+# if the number of args is NOT zero (there is at least one left) AND 
+# the file is found (-f in test), then assign the filename var.
 if [[ $# -ne 0 ]] &&  [[ -f $1 ]]; then
 	filename=$1
-	echo "filename was $filename"
+	echo "file \"$filename\" recognized."
 else
 	echo "User must provide valid filename."
 	printHelp
 	exit
 fi
 
-echo ""
-echo "using sed"
-# sed prints output unless -n flag is used
+
+# actually finding and replacing
+# sed prints output unless -n flag is used. -E enables regex. s is for substitute
 # can save the new filename to new vari by enclosing whole thing in parens
 newname=$(echo $filename | sed -E "s/$find/$replace/g")
-echo "new filename: $newname"
 mv $filename $newname
-
+echo "Renamed \"$filename\" to \"$newname\""
 
