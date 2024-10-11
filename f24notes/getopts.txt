@@ -1,0 +1,32 @@
+first argument to getopts is a string for expected options
+if an option accepts/requires an argument, a colon follows it
+second arg is variable name which will hold the letter option that
+is currently being processed
+
+
+getopts input is processed in a getopts loop/case statement:
+
+while getopts "optionstring" varname; do 
+	case "$varname" in
+	#) ;;
+	#) ;;
+	#) ;;
+	esac
+done
+
+shift $$(( OPTIND - 1 ))
+
+____
+
+all option arguments are storeed in the $OPTARG variable
+
+when using getopts: arguments are passed by using the syntax
+filename -flag arg -flag arg 
+where the arg is skipped if the option doesn't require input
+
+
+adding a colon to the BEGINNING of the input string in the script switches error reporting to silent mode (doesn't get oputputted to console)
+any unrecognized input will be set to ? and $OPTARG will be set to the inknown character. this is dealt with by adding a \?) case to the case statemtn
+
+to deal with missing arguments: $opt is set to : and $OPTARG will be set ot eh otion that is missing an arg
+deal with by using :) in case statement
