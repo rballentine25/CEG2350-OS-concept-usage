@@ -1,4 +1,12 @@
 # Midterm Review for CEG 2350
+---
+list of lab topics:
+- Lab #1: not relevant dont look at it
+- Lab #2: steps to create ssh keypair and add to gitHub. Git commands. chmod. create and switch between users
+- Lab #3: ssh config file. piping/appending/overwriting (|, >, >>, <<). PATH. command line args
+- Lab #4: task tracker bash script using command line args/loops/functions.
+- Lab #5: sed, awk, and regex
+- Lab #6: getopts
 
 ## Intro topics
 
@@ -6,13 +14,29 @@
 SKIPPING THIS FOR NOW
 
 2. Shells
-
+<br> A shell is a command interpreter program that enables users to interact with an OS. Types of shells:  
    - Windows: powershell, cmd
    - Linux / Mac: bash, sh, zsh
 3. SSH
-   - the command ssh, key flags, and the `config` file
-   - private key files (where go and what permissions)
-   - public keys (go where)
+<br> ssh is a secure shell. it is a network protocol used for operating network services securely over an unsecured network. It provides a mechanism for establishing a cryptographically secured connection. 
+- `ssh -i ceg2350key.pem ubuntu@52.73.170.36`
+  <br>-i flag is the identity flag, which is the file that contains the private key for the key pair being used.
+  <br>syntax for ssh in this format is `ssh -i path_to_key ubuntu@AWS_IP`
+- ssh keys come in public-private key pairs. they are usually stored on your PC in a hidden file named .ssh (dot makes invisible)
+- to create a keypair: use command `ssh-keygen -t ed25519`
+  <br> -t specifies the type of key to create and the ed25519 is one of those options
+- adding key to GitHub: copy contents of .pub file from key into GitHub, then use the ssh command to clone the repo
+- WHERE AND WHAT PERMISSIONS: both public and private keys go into hidden .ssh folder.
+  <br>private key should have read and write access for user ONLY. should be (-rw-------).
+ <br>Public key should have read/write for user and read for everyone else (-rw-r--r--)
+- CONFIG FILE: config file may not exist. must have chmod 600 permissions (-rw-------). once set up, provides shortcut for ssh command `ssh hostname1`. takes structure<br>
+```
+Host hostname1
+   HostName IPADDRESS
+   User UBUNTU
+   IdentityFile PATH_TO_KEY
+   Port 22
+```
 
 ## Files, directories, and OS structure
 
