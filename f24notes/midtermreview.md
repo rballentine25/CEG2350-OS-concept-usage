@@ -3,7 +3,10 @@
 ## Intro topics
 
 1. How did the modern computer come to be?
+SKIPPING THIS FOR NOW
+
 2. Shells
+
    - Windows: powershell, cmd
    - Linux / Mac: bash, sh, zsh
 3. SSH
