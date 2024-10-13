@@ -64,6 +64,13 @@ Host hostname1
    - __sudo & the root user__: root user is "superuser" and has access to entire system. it has full control and override permissions and is the only user able to do certain system admin tasks.
      <br> to protect the system, __you dont have root access__ but you can execute commands as the root user using `sudo`
 7. PATH vs path and environment variables
+   - relative path: where you are, ex currfolder/myfile
+   - absolute path: full directory path
+   - __PATH__ is an environment variable that tells the system where to look for executable files. it is a list of directories that the shell searches through to find files to run. you can make a script executable from any folder by adding it to the /bin folder, since /bin is included in PATH
+   - you can view PATH with `echo $PATH`
+   - printenv prints all environment variables
+   - you can see path setup by `vim ~/.profile`
+   - to add a folder to path: `export PATH="$filepath:$PATH"` ex adding folder named "new" located in Home directory: `PATH="$HOME/new:$PATH`
 
 ## Scripting
 
