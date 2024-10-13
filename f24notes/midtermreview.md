@@ -41,16 +41,29 @@ Host hostname1
 ## Files, directories, and OS structure
 
 1. OS structure in Linux (and Mac) vs Windows
-2. Files vs directories
+   <br> TREE BASE: `C:\` in Windows, `/` in linux/mac
+   <br> other stuff with kernels, etc but we haven't gotten to that
+3. Files vs directories: 
    - Commands: ls, cp, mkdir, rmdir, vim, mv, rm, cd, cat, touch, head/tail, less/more
-3. Importance of names and extensions (file)
-4. Ownership & sharing
-   - rwx permissions in Linux
-   - user vs. group vs. other
-   - creating users & groups (and naming rules)
-   - chmod, chown, chgrp, adduser, deluser
-   - sudo & the root user
-5. PATH vs path and environment variables
+4. Importance of names and extensions (file)
+   <br> file types: .md, .txt, .sh, etc
+   <br>
+6. __Ownership & sharing__
+   - rwx: read (4), write (2), execute (1). execute allows running a file as a program or entering the directory
+   - classes: "user" is the owner of the file. this is usually the creator but ownership can be changed with `chown` command
+     <br>"group" is users in the same group as file owner
+     <br> "other" is any other users on the system who dont match the first two criteria
+   - __creating users__: `sudo adduser USERNAME`. Username should be all lowercase in new_user format (may have to use `--force-badname`)
+     <br> to see all users, run `cat /etc/passwd` and new users will be at bottom
+     <br> to switch between users: `su username` and use exit to go back to default user
+     <br> `deluser` to delete a user
+   - __creating groups__: `addgroup group_name`
+     <br> to add a user to a group: `sudo usermod -aG group_name user_name`. aG is append groups
+     <br> run `cat /etc/group` to see all groups and their members, or `getent group groupname` to see the members of just a particular group
+     <br> to change group permissions on a file: `sudo chgrp group_name file_or_folder`
+   - __sudo & the root user__: root user is "superuser" and has access to entire system. it has full control and override permissions and is the only user able to do certain system admin tasks.
+     <br> to protect the system, __you dont have root access__ but you can execute commands as the root user using `sudo`
+7. PATH vs path and environment variables
 
 ## Scripting
 
