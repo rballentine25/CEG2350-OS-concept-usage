@@ -1,0 +1,30 @@
+# LIST OF COMMANDS TO USE IN THE SHELL
+ls - list, options -lah which are 
+cp 
+mkdir 
+rmdir 
+vim 
+mv 
+rm 
+cd 
+cat 
+touch
+head 
+tail
+less 
+more
+man 
+-- help
+cp
+hstory
+pwd - print current/working directory
+chmod - change permissions
+sudo
+chown 
+adduser and useradd (use adduser)
+su - switch users
+exit 
+grep
+sed
+awk
+
