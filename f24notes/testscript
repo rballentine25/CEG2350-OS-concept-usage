@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+#!/bin/bash
+
+# For loop to iterate over a list of items
+for fruit in apple banana orange; do
+    echo "Fruit: $fruit"
+done
+
+for (( i=0; i<100; i++ )); do
+	echo $i
+done

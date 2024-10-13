@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+if [[ -d folder ]]; then
+	touch folder/hello.txt
+fi
+
+var=10
+echo $var
+
+echo $#

@@ -27,4 +27,13 @@ exit
 grep
 sed
 awk
+wget - retrieves a raw file at the given URL
 
+
+diff - compares files line by line. use -q to only see where files differ
+find - search for files in a directory
+wc - print counts for a file: use -l to print line count 
+sort - sort lines of text files. use -o and another file to save output to a file
+uniq - report or omit repeated lines in a text file. DOESNT SAVE
+whereis - not really sure
+which - locate a command
