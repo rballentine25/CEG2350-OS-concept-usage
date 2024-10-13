@@ -212,4 +212,4 @@ Host hostname1
    - status
 3. __merge conflicts__ happen when you forget to pull before working on a local copy. steps to resolve merge conflict:
    * `git pull --rebase`
-   * 
+   * enter merge message then hit ctrl+x and enter to exit
