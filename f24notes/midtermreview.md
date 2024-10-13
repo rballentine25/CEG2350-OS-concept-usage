@@ -188,11 +188,17 @@ Host hostname1
 ## Computer Hardware, Boot Process, and Data on Disks:
 
 1. Computer Hardware:
-   - CPU
-   - RAM
-   - Motherboard
-   - Disks (HDD, SSD, NVME)
-   - GPU (discrete / dedicated vs integrated)
+   - CPU: central processing unit. includes the ALU (arithmetic logic unit), CU (control unit), registers, clock speed, and does all instruction execution. 
+   - RAM: random access memory. volatile memory, as it loses all stored data when power is turned off. much faster than hard drives. provides temp storage for data/programs that the CPU is using. 
+   - Motherboard: main circuit board of the device. houses the CPU and RAM
+   - Disks (HDD, SSD, NVME):
+        - HDD = hard disk drive. has a disk that is spun and read with an actuator arm
+        - SSD: solid state drive. uses flash memory to store data
+        - NVME: non volatile memory express. is actually a highspeed interface protocol for SSDs
+   - GPU (discrete / dedicated vs integrated): graphics processing unit. specialied processor to accelerate rendering of images, etc.
+        - integrated: built directly into CPU, shares RAM with CPU. more basic, found in laptops and budget systems.
+        - discrete/dedicated: separate graphics card installed in a slot on the motherboard. has its own dedicated memory and processing resources
+     
 
 ## Git (version control)
 
