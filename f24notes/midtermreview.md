@@ -210,4 +210,6 @@ Host hostname1
    - push
    - pull
    - status
-3. merge conflicts
+3. __merge conflicts__ happen when you forget to pull before working on a local copy. steps to resolve merge conflict:
+   * `git pull --rebase`
+   * 
