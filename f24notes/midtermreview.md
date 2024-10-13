@@ -75,21 +75,115 @@ Host hostname1
 ## Scripting
 
 1. Aliases & customizations (.bashrc, .profile)
-2. Commands: diff, find, ~~file~~, wc, sort, uniq, whereis, which
+   - `~/.bashrc` is specific to bash and includes aliases and things specific to the bash shell.
+   - aliases for certain commands can be put in the bottom of the .bashrc file, ex. `alias LabFiles='cd /home/ubuntu/ceg2350f24-rballentine25/f24LABS'`
+   - `~/.profile` is stuff that applies to whole session, such as programs you want to start when you login and environment variable definitions. PATH is defined here
 3. IO redirection (streams (standard input, output and error), <, >, >>, |, tee)
-4. executing scripts (source, bash, ./, PATH)
-5. Scripting languages: bash
-   - variables
-   - arguments, reading input
-   - printf vs echo
-   - conditionals (`test`)
+   - `stdin = 0` standard input
+   - `stdout = 1` standard output
+   - `stderr` standard error
+   - REDIRECTION `command > outputfile` overwrites the output of the command to the output file.
+     <br> see Week03/IOredirection slide 17 for how to write only certain output to files or to standard output/error
+   - APPEND `command >> file` appends the output of the command to the file
+   - INPUT REDIRECT ` command < input` uses the file or input source to the command as input
+   - PIPING `command1 | command2` command2 uses the output of command1 as its input, ex `echo "hello world" | helloworld.txt` saves the text "hello world" to the file helloworld.txt
+5. executing scripts (source, bash, ./, PATH)
+   - to execute: need `#!/usr/bin/bash` at top of script
+   - make file executable by changing permissions
+   - now can run by using `bash filename`, `./filename`, or by putting the script in a file on the PATH, can run with just filename
+7. Scripting languages: bash
+   - variables: `var_name=value`
+   - arguments, reading input:
+        - `$#` for number of cmd line args
+        - `$@` to list all cmd line args
+        - 
+   - printf vs echo: printf syntax: `printf "formatstring" arguments`, ex `printf "sum of %d and %d is %d" "$a" "$b" $((a+b))`
+     <br> remember math expressions have to be inside double parens
+   - conditionals (`test`):
+     <br> strings: = and !=
+     <br> integers: `-eq -ne -ge -le -gt -lt`
    - if
+     ```
+     if [[ condition ]]; then
+        # code
+     elif [[ condition ]]; then
+        # code
+     fi
+     ```
    - for
+     ```
+     for fruit in apple banana orange; do
+        # code
+     done
+     ```
+     OR
+     ```
+     for (( i=0; i<100; i++ )); do
+        # code
+     done
+     ```
    - while
-   - getopts
+     ```
+     loopvar=0
+     while [[ $loopvar -le 5 ]]; do
+        # code
+        (( loopvar++ ))
+     done
+     ```
+   - getopts: all option args stored in $OPTARG.
+     <br> the optionstring should be in format `:hf-r-
+     where colon means error reporting will be silent, h
+     doesnt require input but f and r do
+     <br> __more notes in f24notes folder!!__ 
+     ```
+     while getopts "optionstring" varname; do
+        case "$varname" in
+        #) newvar=$OPTARG
+           ;;
+        #)
+           ;;
+        #)
+           ;;
+        \?) #catches any unknown option args
+           ;;
+        esac
+     done
+
+      shift $$(( OPTIND - 1 ))
+     ```
+   
    - case
-6. Regular expressions
-7. grep (search), sed (find & replace), and awk (manipulate formatted data)
+    ```
+    read inputname
+    case $inputname in
+      opt1) 
+         # code
+         ;;
+      opt2)
+         # code 
+         ;;
+      *) 
+         # code: * is all other input that doesn't match given case options
+         ;;
+    esac
+    ```
+   
+8. Regular expressions
+   - [datacamp](https://www.datacamp.com/cheat-sheet/regular-expresso)
+   - [regex101](https://regex101.com/)
+   - remember to enable regex expressions in things with option flags!
+10. grep (search), sed (find & replace), and awk (manipulate formatted data)
+    - __GREP__ `grep [options] pattern [file]`
+         - flags: -i (ignore case), -v (invert match, select non-matching lines), -r (search recursively)
+         - grep outputs to standard output. must pipe or redirect (` grep "phrase" test.txt > output.txt`) to save. can also pipe counts like `grep "phrase" test.txt | wc -l`
+      - __SED__: stream editor! `sed [options] 'command' [file]`
+         - flags: -i (modify og file), -n (supress auto printing)
+         - within command: `s/find/replace/g` to replace all instances of the find phrase with the replace phrase. s means substitute, g means global
+      - __AWK__: scanning processing. `awk 'pattern { action }' [file]`
+        - awk scans files for fields, which are default separated by a space. to change delimiter, use `-F "delim"`, ex `-F ","` for comma delimiter
+        - can do things like ` awk '{ print $0 }' employee.txt` to print all fields in the file
+        - or `awk '{ print $1, " ", $4}' employee.txt` will print columns 1 and 4 separated by a space
+     
 
 ## Computer Hardware, Boot Process, and Data on Disks:
 
