@@ -1,0 +1,5 @@
+#!/bin/bash
+goto=0
+goto="$(dirname "$(find ~ -type f -name README.md | head -1)")"
+echo $goto
+cd $goto
