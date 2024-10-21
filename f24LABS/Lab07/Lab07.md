@@ -6,20 +6,20 @@
 ## System Discovery
 
 1. CPU info:
-    - CPU brand:
-    - Number of cores:
-    - Number of logical cores:
+    - CPU brand: `Intel`
+    - Number of cores: `12`
+    - Number of logical cores: `16`
 2. GPU info:
-    - Integrated GPU info:
-    - Dedicated GPU info: 
+    - Integrated GPU info: 
+    - Dedicated GPU info: `Intel Iris Xe Graphics`
     - Link to driver software for GPU: 
 3. Memory info:
-    - Physical memory (RAM) size (in GB):
+    - Physical memory (RAM) size (in GB): `16 GB`
     - Virtual memory size (in GB):
 4. Storage info (repeat for each disk attached to your system): 
-    - Disk 1 type:
-    - Disk 1 manufacturer and model:
-    - Total disk 1 size (in GB):
+    - Disk 1 type: `NVMe`
+    - Disk 1 manufacturer and model: 
+    - Total disk 1 size (in GB): `1 TB = 1000 GB`
 5. Primary partition info:
     - Primary partition mount point: `931.58 GB`
     - Remaining space on primary partition (in GB): `425 GB` 
