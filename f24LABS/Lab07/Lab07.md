@@ -21,16 +21,16 @@
     - Disk 1 manufacturer and model:
     - Total disk 1 size (in GB):
 5. Primary partition info:
-    - Primary partition mount point:
-    - Remaining space on primary partition (in GB):
-    - Filesystem on primary partition:
+    - Primary partition mount point: `931.58 GB`
+    - Remaining space on primary partition (in GB): `425 GB` 
+    - Filesystem on primary partition: `NTFS`
 6. BIOS / UEFI info: 
     - BIOS or UEFI version: 
     - How to access your BIOS / UEFI:
 7. Kernel / OS info:
     - Bootloader software on your system: 
     - Kernel version of your operating system:
-    - Operating System name & version: 
+    - Operating System name & version: `Windows 11 Home`
 
 ## Part 2 - Virtualize the Machine
 
