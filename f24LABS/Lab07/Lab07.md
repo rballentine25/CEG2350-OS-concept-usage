@@ -50,7 +50,6 @@
     - Hard disk space: `35 GB, since OS base requirement was listed as 25`
 
 4. Guest OS Installation:
-    - Note steps completed to install and then run the guest operating system
       ```
       1. after starting VM, make sure to select "TRY/INSTALL Ubuntu"
       2. In installation menu, select "Install Ubuntu"
@@ -60,12 +59,18 @@
       6. Select "erase disk and install" 
       7. Set up username, PC name, and password
       8. Select timezone
-      9. Install!
+      9. Click install and allow reboot
+      10. If needed, hit enter when "please remove installation medium" message comes up
       ```
     - ![screenshot of installed & running Guest OS in VM](Ubuntu_screenshot.png)
 
 ## Part 3 - Virtual Playground:
 
-1. How to change your desktop background in your VM:
+1. How to change your desktop background in your VM: `right click on background and choose "Change background..." from options menu that comes up`
 2. How to install VSCode in your VM:
-3. How to connect to your AWS instance from your VM using `ssh`:
+   ```
+   - open App Center from start menu on left side of screen
+   - search for "visual studio code" in search bar
+   - select app named "code" and hit install
+   ```
+4. How to connect to your AWS instance from your VM using `ssh`:
