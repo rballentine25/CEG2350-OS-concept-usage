@@ -36,13 +36,13 @@
 ## Part 2 - Virtualize the Machine
 
 1. Virtual Machine Manager:
-    - Software & version:
-    - Link to software URL: 
-    - ![screenshot of installed & running software](RELATIVE_PATH_TO_SCREENSHOT_IN_FOLDER)
+    - Software & version: `VirtualBox 7.1.4`
+    - Link to software URL: `https://www.virtualbox.org/wiki/Downloads`
+    - ![screenshot of installed & running software](/VirtualBox_screenshot.png)
 
 2. Guest OS information: 
-    - Linux distribution selected:
-    - URL downloaded from: 
+    - Linux distribution selected: `Ubuntu 24.04.1 LTS`
+    - URL downloaded from: `https://ubuntu.com/download/desktop`
 
 3. Guest VM resource allocations:
     - Number of Virtual CPUs:
