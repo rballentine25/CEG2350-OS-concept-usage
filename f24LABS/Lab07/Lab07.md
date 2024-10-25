@@ -38,20 +38,31 @@
 1. Virtual Machine Manager:
     - Software & version: `VirtualBox 7.1.4`
     - Link to software URL: `https://www.virtualbox.org/wiki/Downloads`
-    - ![screenshot of installed & running software](/VirtualBox_screenshot.png)
+    - ![screenshot of installed & running software](VirtualBox_screenshot.png)
 
 2. Guest OS information: 
     - Linux distribution selected: `Ubuntu 24.04.1 LTS`
     - URL downloaded from: `https://ubuntu.com/download/desktop`
 
 3. Guest VM resource allocations:
-    - Number of Virtual CPUs:
-    - RAM: 
-    - Hard disk space: 
+    - Number of Virtual CPUs: `4`
+    - RAM: `4 GB`
+    - Hard disk space: `35 GB, since OS base requirement was listed as 25`
 
 4. Guest OS Installation:
     - Note steps completed to install and then run the guest operating system
-    - ![screenshot of installed & running Guest OS in VM](RELATIVE_PATH_TO_SCREENSHOT_IN_FOLDER)
+      ```
+      1. after starting VM, make sure to select "TRY/INSTALL Ubuntu"
+      2. In installation menu, select "Install Ubuntu"
+      3. Select "Interactive Installation"
+      4. Select "Default selection"
+      5. When asked about proprietary software, check both boxes
+      6. Select "erase disk and install" 
+      7. Set up username, PC name, and password
+      8. Select timezone
+      9. Install!
+      ```
+    - ![screenshot of installed & running Guest OS in VM](Ubuntu_screenshot.png)
 
 ## Part 3 - Virtual Playground:
 
