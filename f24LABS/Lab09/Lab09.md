@@ -5,10 +5,10 @@
 
 ## Part 1 - Game the system
 
-- Game name: 
-- How to install:
-- Location of game executable:
-- How to run game:
+- Game name: `ninvaders`
+- How to install: `sudo apt install ninvaders`
+- Location of game executable: `/usr/games/ninvaders`
+- How to run game: `ninvaders`
 
 ## Part 2 - Process Control
 
