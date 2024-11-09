@@ -13,13 +13,16 @@
 ## Part 2 - Process Control
 
 1. `ps` field descriptions:
-   - USER / UID:
-   - PID:
-   - PPID:
-   - TTY:
-   - STAT:
-   - COMMAND / CMD:
-2. `ps` command:
+   - USER / UID: `the user running the process`
+   - PID: `the process ID number` 
+   - PPID: `parent process ID number`
+   - TTY: `controlling terminal for the process`
+   - STAT: `the state of the process (state code)`
+   - COMMAND / CMD: `the name of the command that started the process`
+2. `ps` command: `ps xo uid,pid,ppid,tty,stat,cmd`
+```x option shows processes without controlling terminal
+o option allows you to specify which columns are displayed```
+
 3. Output of `ps` with two shells, one running the game:
 ```
 Output of command goes here
