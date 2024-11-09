@@ -58,33 +58,60 @@ I used SIGKILL and ran "kill -9 1036". this gave output "Connection to 52.73.170
 Shell A and logged me out of the aws instance
 ```
 7. Describe what happens if you close / `exit` your connection with Shell C and determine if you can reenter the game (resume the process).
-   - Answer: `you can start a new game process but you can't reenter the one you were in while 
-running Shell C because its parent bash process is also gone (i think? not really sure what this 
-is asking for)`
+   - Answer:
+```
+you can start a new game process but you can't reenter the one you were in while running Shell C 
+because its parent bash process is also gone (i think? not really sure what this is asking for)
+```
 
 ## Part 3 - back and fore
 
-1. Run in the foreground: 
-2. `STOP` signal to suspend it: 
-3. Proof of life from `ps` output:
+1. Run in the foreground: `ninvaders`
+2. `STOP` signal to suspend it: `ctrl + z to send SIGSTP signal`
+3. Proof of life from `ps` output: 
 ```
-insert line here
+ubuntu      1662    1620 pts/1    T    ninvaders
 ```
-4. Resume in the foreground:
-5. `TERMINATE` signal to kill it: 
-6. Start as a background process: 
-7. Output of `jobs` from controlling terminal:
+4. Resume in the foreground: `fg`
+5. `TERMINATE` signal to kill it: `ctrl + c to send SIGINT signal` 
+6. Start as a background process: `add an ampersand: "ninvaders &". it started them already
+in stopped status`
+7. Output of `jobs` from controlling terminal: 
 ```
-Insert output here
+ubuntu@ip-10-0-0-25:~$ jobs
+[1]   Stopped                 ninvaders
+[2]-  Stopped                 ninvaders
+[3]+  Stopped                 ninvaders
 ```
 Output of `ps`:
 ```
-Insert output here
+ubuntu@ip-10-0-0-25:~$ ps xo user,pid,ppid,tty,stat,cmd
+USER         PID    PPID TT       STAT CMD
+ubuntu       845       1 ?        Ss   /lib/systemd/systemd --user
+ubuntu       846     845 ?        S    (sd-pam)
+ubuntu       931     842 ?        S    sshd: ubuntu@pts/0
+ubuntu       932     931 pts/0    Ss   -bash
+ubuntu      1096    1046 ?        R    sshd: ubuntu@pts/2
+ubuntu      1097    1096 pts/2    Ss   -bash
+ubuntu      1555     932 pts/0    S+   vim Lab09.md
+ubuntu      1619    1560 ?        S    sshd: ubuntu@pts/1
+ubuntu      1620    1619 pts/1    Ss+  -bash
+ubuntu      1694    1620 pts/1    T    ninvaders
+ubuntu      1697    1620 pts/1    T    ninvaders
+ubuntu      1698    1620 pts/1    T    ninvaders
+ubuntu      1704    1097 pts/2    R+   ps xo user,pid,ppid,tty,stat,cmd
 ```
-8. Kill job:
-9. Move job to the foreground: 
+8. Kill job: 
+```
+in Shell A (where game was started):
+to find PID of one of the jobs to kill: "pgrep ninvaders"
+then to kill: "kill -KILL 1694" where -KILL does same as -9 to send SIGKILL signal (INT won't work)
+could also run "kill -9 1694" right from shell B 
+```
+9. Move job to the foreground: `fg JOBID, so "fg 2" moves the second ninvaders (PID 1697) to fg`
 10. Describe what happens, using process knowledge in your description, if you close / `exit` your connection with this shell and determine if you can reenter the game (resume the process).
-   - Answer: 
+   - Answer: ` same as in part 2, you can't reenter because both the process and its parents are
+gone? `
 
 ## Part 4 - Detach
 
