@@ -2,6 +2,7 @@
 
 - Name: Rachael Ballentine
 - Email: ballentine.7@wright.edu
+- Date: 11/8/2024
 
 ## Part 1 - Game the system
 
@@ -119,7 +120,7 @@ gone? `
 2. Detach from the session: `ctrl+b, then d`
 3. `ps` command:
 ```
-Output of command goes hereubuntu@ip-10-0-0-25:~$ ps xo user,pid,ppid,tty,stat,cmd
+ubuntu@ip-10-0-0-25:~$ ps xo user,pid,ppid,tty,stat,cmd
 USER         PID    PPID TT       STAT CMD
 ubuntu       845       1 ?        Ss   /lib/systemd/systemd --user
 ubuntu       846     845 ?        S    (sd-pam)
@@ -145,4 +146,4 @@ ubuntu@ip-10-0-0-25:~$ tmux ls
 means the session is still running and availabele`
 7. Reattach to `tmux` session: `"tmux a" to reattach to the most recent session or "tmux a -t name"
 to reattach to a specific session (i only had one so didnt need to target)`
-8. Kill `tmux` session: `"tmux kill-session" to kill most recent session. i ran from a different shell`
+8. Kill `tmux` session: `tmux kill-session`
