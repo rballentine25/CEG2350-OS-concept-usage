@@ -115,17 +115,34 @@ gone? `
 
 ## Part 4 - Detach
 
-1. Create a `tmux` session:
-2. Detach from the session:
+1. Create a `tmux` session: `tmux`
+2. Detach from the session: `ctrl+b, then d`
 3. `ps` command:
 ```
-Output of command goes here
+Output of command goes hereubuntu@ip-10-0-0-25:~$ ps xo user,pid,ppid,tty,stat,cmd
+USER         PID    PPID TT       STAT CMD
+ubuntu       845       1 ?        Ss   /lib/systemd/systemd --user
+ubuntu       846     845 ?        S    (sd-pam)
+ubuntu       931     842 ?        S    sshd: ubuntu@pts/0
+ubuntu       932     931 pts/0    Ss   -bash
+ubuntu      1746     932 pts/0    S+   vim Lab09.md
+ubuntu      2350    2300 ?        R    sshd: ubuntu@pts/2
+ubuntu      2351    2350 pts/2    Ss   -bash
+ubuntu      2446    2387 ?        S    sshd: ubuntu@pts/3
+ubuntu      2447    2446 pts/3    Ss+  -bash
+ubuntu      2472       1 ?        Ss   tmux
+ubuntu      2473    2472 pts/1    Ss   -bash
+ubuntu      2485    2473 pts/1    S+   ninvaders
+ubuntu      2486    2351 pts/2    R+   ps xo user,pid,ppid,tty,stat,cmd
 ```
-4. Command to list `tmux` sessions:
+4. Command to list `tmux` sessions:`tmux ls`
 ```
-Output of command goes here
+ubuntu@ip-10-0-0-25:~$ tmux ls
+0: 1 windows (created Sat Nov  9 02:30:45 2024)
 ```
 5. How can you determine if your `tmux` session with your game running is available?
-   - Answer: 
-7. Reattach to `tmux` session:
-8. Kill `tmux` session: 
+   - Answer: `run "tmux ls" again, and see what is listed. i got the same output as before, which
+means the session is still running and availabele`
+7. Reattach to `tmux` session: `"tmux a" to reattach to the most recent session or "tmux a -t name"
+to reattach to a specific session (i only had one so didnt need to target)`
+8. Kill `tmux` session: `"tmux kill-session" to kill most recent session. i ran from a different shell`
