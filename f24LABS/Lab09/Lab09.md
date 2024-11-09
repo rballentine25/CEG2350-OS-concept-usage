@@ -50,9 +50,17 @@ ubuntu      1336    1097 pts/2    R+   ps xo user,pid,ppid,tty,stat,cmd
    - Describe what the effect was: `running "kill 1333" in Shell B closed ninvaders in Shell A 
 and it wasn't listed in the active processes anymore when the ps command was rerun in Shell B` 
 6. `kill` to kill the game and it's parent process: 
-   - Describe what the effect was:
+   - Describe what the effect was: 
+```
+the new process id for Ninvaders was 1372. I ran "kill 1372" and ninvaders closed, then I tried
+"kill 1036" to kill the parent. that didn't do anything (1036 was still listed when I ran ps) so
+I used SIGKILL and ran "kill -9 1036". this gave output "Connection to 52.73.170.36 closed." in 
+Shell A and logged me out of the aws instance
+```
 7. Describe what happens if you close / `exit` your connection with Shell C and determine if you can reenter the game (resume the process).
-   - Answer: 
+   - Answer: `you can start a new game process but you can't reenter the one you were in while 
+running Shell C because its parent bash process is also gone (i think? not really sure what this 
+is asking for)`
 
 ## Part 3 - back and fore
 
