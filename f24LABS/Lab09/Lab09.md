@@ -20,8 +20,10 @@
    - STAT: `the state of the process (state code)`
    - COMMAND / CMD: `the name of the command that started the process`
 2. `ps` command: `ps xo uid,pid,ppid,tty,stat,cmd`
-```x option shows processes without controlling terminal
-o option allows you to specify which columns are displayed```
+```
+x option shows processes without controlling terminal
+o option allows you to specify which columns are displayed
+```
 
 3. Output of `ps` with two shells, one running the game:
 ```
