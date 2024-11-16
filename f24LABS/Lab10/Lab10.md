@@ -136,6 +136,9 @@ Steps to `merge` changes to another branch (`main`):
 ```
 git checkout main
 git merge branchname
+
+i didn't mess with main while doing my comments, so git did a fast-forward merge
+(no commit message shows up for the merge)
 ```
 
 Steps to resolve a `merge` conflict:
