@@ -57,10 +57,14 @@ python3 --version
 ``` 
 
 Web based IDEs: 
+` I said all Jdoodle because the layout is nice and its free forever`
 
-- Java
+- Java 
+`Jdoodle: https://www.jdoodle.com/online-java-compiler`
 - C++
+`Jdoodle: https://www.jdoodle.com/online-compiler-c++`
 - Python
+`Jdoodle: https://www.jdoodle.com/python3-programming-online`
 
 ## Part 2 - Compiling
 
