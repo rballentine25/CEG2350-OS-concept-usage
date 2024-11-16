@@ -1,6 +1,3 @@
-@# i watched some youtube videos (NeuralNine had a good one) and thats how i learned
-@# about supressing output
-
 default : build run
 	@# default when just "make" is to run both the build and run targets 
 	@# ie command "make" and command "make build run" are the same now
