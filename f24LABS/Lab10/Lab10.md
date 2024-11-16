@@ -160,13 +160,26 @@ git push origin main
 ## Part 4 - `makey makey`
 
 Using `Makefile` to build executable:
+```
+To build executable from source files, run the command "make build".
+```
 
-Using `Makefile` to run program:
+Using `Makefile` to run program:  
+``` 
+To run the program, run the command "make run". 
+The build target must have already been run previously for this command to work; 
+otherwise the run target will not be able to find its dependencies.
+
+To build AND run the program, run the command "make". 
+The default target will run both the build and run targets.
+```
 
 Using `Makefile` to remove compilation files, such as the executable: 
+```
+To remove executable file, run the command "make clean". 
+If the build target was not previously run or if clean was run twice in a row, 
+this will output an error.
+```
 
 ## Extra Credit - Ignore That
-
-Remove this statement and the exclamation point from the line below so TAs can click to check for a working `.gitignore` file.  Test that the link works - if it doesn't, fix the pathing.
-
-![`.gitignore` file in root of repository](../.gitignore)
+N/A (didn't do)
