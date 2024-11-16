@@ -99,11 +99,30 @@ compiling creates file a.out in working folder. to run:
 ### Program User Guide
 
 #### Program Description
-
+```
+TODO is a task tracking program. Users can add tasks, mark them as complete, 
+remove tasks, and see the full list of tasks by using numbers 1-5 and giving
+input for task names.
+```
 #### How to Build and Run Program
+```
+To compile the program, users must first install C++ compiler by running the following commands:
+	sudo apt update
+	sudo apt install build-essential
+	g++ --version
 
+After the compiler has been downloaded, the program can be compiled by running the following:
+	g++ main.cpp utility.cpp
+
+This will create a file named a.out in the working folder.
+To run the program, run the following command:
+	./a.out
+```
 #### How to Use Program
-
+```
+To use the program, read the output menu and choose the desired action. Enter the number
+associated with that action in the command line and enter the task name when prompted.
+```
 ### `git` `branch` Guide
 
 Create a branch:
