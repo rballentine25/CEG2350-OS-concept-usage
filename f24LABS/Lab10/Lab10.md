@@ -181,5 +181,12 @@ If the build target was not previously run or if clean was run twice in a row,
 this will output an error.
 ```
 
+`A note on the Makefile: I didn't read the rubric until after I committed the Makefile
+versions. I didn't use AI to write my makefile, but I did watch some youtube videos
+(including this one by NeuralNine https://www.youtube.com/watch?v=yWLkyN_Satk) and read
+through some other resources and those were what gave me the idea to create a default 
+target that builds and executes. I tried having it depend on exefile first and that didn't 
+work, so that's why it depends on build and run. thats all ty`
+ 
 ## Extra Credit - Ignore That
 N/A (didn't do)
