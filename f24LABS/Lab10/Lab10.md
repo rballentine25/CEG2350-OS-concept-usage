@@ -126,15 +126,33 @@ associated with that action in the command line and enter the task name when pro
 ```
 ### `git` `branch` Guide
 
-Create a branch:
+Create a branch: `git branch branchname`
 
-Change to branch:
+Change to branch: `git checkout branchname`
 
-Add branch to remote if created locally (GitHub):
+Add branch to remote if created locally (GitHub): `git push -u origin branchname`
 
-Steps to `merge` changes to another branch (`main`):
+Steps to `merge` changes to another branch (`main`): 
+```
+git checkout main
+git merge branchname
+```
 
-Steps to resolve a `merge` conflict: 
+Steps to resolve a `merge` conflict:
+```
+github will notify you at commit/push if there is a conflict. to fix:
+
+git status
+vim conflictedfile
+
+look for conflict markers: <<<<<HEAD indicates beginning of conflict, and v1 will be right
+below it. ======= marks separation between v1 and v2 v2 will be right below. >>>>> marks end 
+of conflict section. delete the conflict markers and decide which version to keep. then:
+
+git add .
+git commit -m ""
+git push origin main
+``` 
 
 ## Part 4 - `makey makey`
 
