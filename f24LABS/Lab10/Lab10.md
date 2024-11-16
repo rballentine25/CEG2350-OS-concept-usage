@@ -11,6 +11,15 @@ Your AWS instance's Operation System:
 
 - Java
    - How to install on your OS:
+```
+
+following instructions from ubuntu.com and geeksforgeeks.com:
+
+sudo apt get-update	
+sudo apt install default-jdk
+sudo apt install default-jre
+java -version
+```
    - How to install on OS on AWS: 
 - C++
    - How to install on your OS:
