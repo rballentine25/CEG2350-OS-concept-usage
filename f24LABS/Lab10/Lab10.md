@@ -69,10 +69,30 @@ Web based IDEs:
 ## Part 2 - Compiling
 
 1. Method & command to get a copy of the source code files:
-2. Command(s) to install the C/C++ compiler on Ubuntu:
-3. Command(s) to confirm the installation of the C/C++ compiler on Ubuntu:
+`open raw file for each file from GitHub and run "wget rawwebaddress" for each in the terminal`
+2. Command(s) to install the C/C++ compiler on Ubuntu: 
+```
+sudo apt update
+sudo apt install build-essential
+```
+3. Command(s) to confirm the installation of the C/C++ compiler on Ubuntu: 
+```
+g++ --version
+
+if you get an error, its not installed
+```
 4. Command(s) to compile the source code into an executable program:
+```
+have to compile both main and utility.cpp for them to work
+
+g++ main.cpp utility.cpp
+```
 5. Command(s) to execute the program:
+```
+compiling creates file a.out in working folder. to run:
+
+./a.out
+```
 
 ## Part 3 - Document
 
