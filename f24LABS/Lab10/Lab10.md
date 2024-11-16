@@ -5,34 +5,48 @@
 
 ## Part 1 - Compilers
 
-Your Operating System:
+Your Operating System: `Windows 11 Home (64bit)`
 
-Your AWS instance's Operation System:
+Your AWS instance's Operation System: `Ubuntu 22.04.1 LTS`
 
 - Java
    - How to install on your OS:
 ```
-
+check if java is installed: run "java -version" in powershell
+download installer from java.com for windows and run it. i could not
+find an easy/straightforward way to download from powershell (bc powershell
+is dumb)
+```
+   - How to install on OS on AWS: 
+```
 following instructions from ubuntu.com and geeksforgeeks.com:
 
-sudo apt get-update	
+sudo apt get-update
 sudo apt install default-jdk
 sudo apt install default-jre
 java -version
 ```
-   - How to install on OS on AWS: 
+
 - C++
    - How to install on your OS:
+```
+nothing is easy with windows/powershell... easiest to download VScode
+and install MicrosoftC/C++ Extension and C/C++ Runner to compile
+```
+   - How to install on OS on AWS:
 ```
 installing g++ compiler: following instructions from linuxconfig.org
 
 sudo apt update
 sudo apt install build-essential
 g++ --version
-```
-   - How to install on OS on AWS: 
+``` 
+
 - Python
    - How to install on your OS:
+```
+open Microsoft Store and install python from there
+```
    - How to install on OS on AWS:
 ```
 from instructions on phoenixnap.com:
