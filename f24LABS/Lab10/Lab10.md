@@ -23,10 +23,24 @@ java -version
    - How to install on OS on AWS: 
 - C++
    - How to install on your OS:
+```
+installing g++ compiler: following instructions from linuxconfig.org
+
+sudo apt update
+sudo apt install build-essential
+g++ --version
+```
    - How to install on OS on AWS: 
 - Python
    - How to install on your OS:
-   - How to install on OS on AWS: 
+   - How to install on OS on AWS:
+```
+from instructions on phoenixnap.com:
+
+sudo apt update
+sudo apt install python3
+python3 --version
+``` 
 
 Web based IDEs: 
 
