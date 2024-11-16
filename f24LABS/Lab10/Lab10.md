@@ -1,7 +1,8 @@
 ## Lab 10
 
-- Name:
-- Email:
+- Name: Rachael Ballentine
+- Email: ballentine.7@wright.edu
+- Date: 11/15/24
 
 ## Part 1 - Compilers
 
