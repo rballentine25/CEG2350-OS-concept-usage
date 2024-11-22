@@ -7,12 +7,13 @@
 ## Part 1 Answers:
 
 1. `tar` options:
-   - `-c`
-   - `-v`
-   - `-f`
-   - `-z`
-   - `-x`
-2. Command(s) to create and compress your archive:
+   - `-c` : `create new archive`
+   - `-v` : `list files as tar compresses them (progress)`
+   - `-f` : `specify file name type of archive file`
+   - `-z` : `compress the archive using gzip`
+   - `-x` : `extract from an archive`
+2. Command(s) to create and compress your archive: 
+`tar czf f24labs-compressed.tar.gx /home/ubuntu/ceg2350f24-rballentine25/f24LABS`
 
 ## Part 2 Answers:
 
