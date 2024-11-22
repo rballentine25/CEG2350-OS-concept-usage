@@ -42,7 +42,12 @@ sudo chmod 771 /var/www/html
 5. Command to extract the compressed archive to `/var/www/html`:
 `"tar -xvf simple-site.tar.gz -C /var/www/html", -C allows to be saved to specified path`
 6. Required changes to `index.html` will be awarded credit based on screenshot.
-7. [Insert screenshot of your website (ceg2350website.png)]()
+7. ![screenshot of website](ceg2350website.png)
+```
+i could not for the life of me figure out how to get to "my website" from my aws instance. i tried running "hostname -I"
+to get the IP and then going to "http://10.0.0.25" in my browser, and it would never connect (said it wasnt responding).
+I redid all the steps in my local WSL2 terminal and thats how I got the screenshot. 
+```
 
 ## Part 4 Answers:
 
