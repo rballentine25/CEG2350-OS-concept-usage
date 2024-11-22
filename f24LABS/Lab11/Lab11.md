@@ -13,18 +13,21 @@
    - `-z` : `compress the archive using gzip`
    - `-x` : `extract from an archive`
 2. Command(s) to create and compress your archive: 
-`tar czf f24labs-compressed.tar.gx /home/ubuntu/ceg2350f24-rballentine25/f24LABS`
+`tar czf f24labs-compressed.tar.gz /home/ubuntu/ceg2350f24-rballentine25/f24LABS`
 
 ## Part 2 Answers:
 
-1. Command to connect with `sftp`:
+1. Command to connect with `sftp`: `sftp 2350`
 2. `sftp` options:
-   - `ls`
-   - `lls`
-   - `put`
-   - `get`
+   - `ls` : `lists all files in current remote directory (whatevery youre connected to 
+via ssh`
+   - `lls` : `lists all files in the current local directory (from host machine)`
+   - `put` : `uploads a local file from the local directory to the current remote directory`
+   - `get` : `downloads a file from the remote directory to the local directory`
 3. Command(s) to use `sftp` to download your `.tar.gz` file to your system:
-4. Command(s) to decompress & extract your `.tar.gz` file to your system:
+ `while connected and in correct directory, "get f24labs-compressed.tar.gz"
+4. Command(s) to decompress & extract your `.tar.gz` file to your system: 
+ `tar -xf f24lab-dl-files.tar.gz` 
 
 ## Part 3 Answers:
 
