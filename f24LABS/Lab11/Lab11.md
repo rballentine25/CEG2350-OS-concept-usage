@@ -31,11 +31,16 @@ via ssh`
 
 ## Part 3 Answers:
 
-1. Command to install `apache2` or `nginx`:
-2. Command to confirm that web serving service is running:
-3. Command to download [`simple-site.tar.gz`](simple-site.tar.gz) to your AWS instance:
+1. Command to install `apache2` or `nginx`: `sudo apt install apache2`
+2. Command to confirm that web serving service is running: `systemctl status apache2` or `ps aux | grep apache2`
+3. Command to download [`simple-site.tar.gz`](simple-site.tar.gz) to your AWS instance: `wget https://github.com/pattonsgirl/CEG2350/raw/refs/heads/main/Labs/Lab11/simple-site.tar.gz`
 4. Command(s) to change permissions: 
+``` 
+sudo chgrp -hR ubuntu:ubuntu /var/www/html (to recursively change owner and group)
+sudo chmod 771 /var/www/html
+```
 5. Command to extract the compressed archive to `/var/www/html`:
+`"tar -xvf simple-site.tar.gz -C /var/www/html", -C allows to be saved to specified path`
 6. Required changes to `index.html` will be awarded credit based on screenshot.
 7. [Insert screenshot of your website (with the URL bar included)]()
 
