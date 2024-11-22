@@ -42,7 +42,7 @@ sudo chmod 771 /var/www/html
 5. Command to extract the compressed archive to `/var/www/html`:
 `"tar -xvf simple-site.tar.gz -C /var/www/html", -C allows to be saved to specified path`
 6. Required changes to `index.html` will be awarded credit based on screenshot.
-7. [Insert screenshot of your website (with the URL bar included)]()
+7. [Insert screenshot of your website (ceg2350website.png)]()
 
 ## Part 4 Answers:
 
