@@ -96,27 +96,39 @@ also be used as a security tool. has flags like -c to exit after rercieving a ce
 
 ## Part 2 - Network Info
 
-### Network Info for <Your OS Here>
+### Network Info for Windows 11
 
-1. Hostname of the device:
-2. MAC address of the NIC connected to the network:
-3. IPv4 address:
-4. Subnet mask:
-5. Gateway address:
-6. Does the device use DHCP to receive a network address? (y/n):
-7. DNS server address:
-8. Public IPv4 address:
+1. Hostname of the device: `RachaelsLaptop`
+2. MAC address of the NIC connected to the network: `"Physical Address
+ for Wireless LAN adapter Wi-Fi 1: BC-03-58-D3-FD-B5`
+3. IPv4 address: `10.17.241.15 (private)`
+4. Subnet mask: `255.255.0.0`
+5. Gateway address: `"Default Gateway": 10.17.0.1`
+6. Does the device use DHCP to receive a network address? (y/n): `Yes`
+7. DNS server address: `130.108.128.200`
+8. Public IPv4 address: `130.108.104.154`
+```
+answers for 1-7 found using "ipconfig /all" in PowerShell
+answer for 8 found using ipinfo.io
+```
 
 ### Network Info for AWS Instance
 
-1. Hostname of the device:
-2. MAC address of the NIC connected to the network:
-3. IPv4 address:
-4. Subnet mask:
-5. Gateway address:
-6. Does the device use DHCP to receive a network address? (y/n):
-7. DNS server address:
-8. Public IPv4 address:
+1. Hostname of the device: `ip-10-0-0-25'
+2. MAC address of the NIC connected to the network: `"link/ether": 0a:ff:c2:af:4c:d5`
+3. IPv4 address: `"inet": 10.0.0.25`
+4. Subnet mask: `"netmask": 255.255.255.0`
+5. Gateway address: `0.0.0.0`
+6. Does the device use DHCP to receive a network address? (y/n): `yes`
+7. DNS server address: `127.0.0.53`
+8. Public IPv4 address: `52.73.170.36`
+```
+ansert for 2 found with "ip a"
+answer for 1, 3-4, 6 found with "ifconfig": for 6, dynamic keyword was used in inet line
+answer for 5 found with "route"
+answer for 7 found with "nslookup -> server"
+answer for 8 found by "curl https://ipinfo.io"
+```
 
 ## Part 3 - Subnet Translation
 
