@@ -7,7 +7,8 @@
 
 - `hostname` 
 ``` 
-displays the system's host name (DNS name) and allows you to change it. Includes flags like -i/I to get all IP addresses and -b to set/change the hostname. 
+displays the system's host name (DNS name) and allows you to change it. 
+Includes flags like -i/I to get all IP addresses and -b to set/change the hostname. 
 ```
     - Resource on `hostname`: `https://www.geeksforgeeks.org/hostname-command-in-linux-with-examples/`
 - `ifconfig`
