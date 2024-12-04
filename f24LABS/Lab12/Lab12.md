@@ -99,8 +99,7 @@ also be used as a security tool. has flags like -c to exit after rercieving a ce
 ### Network Info for Windows 11
 
 1. Hostname of the device: `RachaelsLaptop`
-2. MAC address of the NIC connected to the network: `"Physical Address
- for Wireless LAN adapter Wi-Fi 1: BC-03-58-D3-FD-B5`
+2. MAC address of the NIC connected to the network: `"Physical Address": BC-03-58-D3-FD-B5`
 3. IPv4 address: `10.17.241.15 (private)`
 4. Subnet mask: `255.255.0.0`
 5. Gateway address: `"Default Gateway": 10.17.0.1`
@@ -114,7 +113,7 @@ answer for 8 found using ipinfo.io
 
 ### Network Info for AWS Instance
 
-1. Hostname of the device: `ip-10-0-0-25'
+1. Hostname of the device: `ip-10-0-0-25`
 2. MAC address of the NIC connected to the network: `"link/ether": 0a:ff:c2:af:4c:d5`
 3. IPv4 address: `"inet": 10.0.0.25`
 4. Subnet mask: `"netmask": 255.255.255.0`
