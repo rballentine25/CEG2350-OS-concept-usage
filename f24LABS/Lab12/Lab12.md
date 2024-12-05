@@ -139,7 +139,7 @@ Translate the below CIDR blocks to their IP ranges:
 Translate the below IP ranges to their CIDR notation subnets:
 1. `172.18.5.0 - 172.18.5.255` = `/24`
 2. `5.9.243.187 - 5.9.243.187` = `/32`
-3. `192.168.0.0 - 192.168.1.255` = `/23`10.25.121.90
+3. `192.168.0.0 - 192.168.1.255` = `/23`
 
 ## Part 4 - Security
 
