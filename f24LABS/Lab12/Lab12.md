@@ -144,11 +144,15 @@ Translate the below IP ranges to their CIDR notation subnets:
 ## Part 4 - Security
 
 Screenshot of your changed Inbound Security Group rules.  
-![Inbound Rules for Lab 12](relative/path/to/image)
-
-> Why should HTTP allow any IP, while SSH has restrictions?
+![Inbound Rules for Lab 12](inbound_rules_lab12.png)
 
 > Describe how you validated or can validate if your rules are working with the restrictions given.
+```
+I know my WSU ssh rule works because it was the first one I did (while I was at home)
+ and it wouldn't let me ssh back into my AWS instance after I set the rule. 
+I know my home rule works because after I set that one up, then I COULD get into
+my AWS at homme.
+```
 
 ## Part 5 - It's Alive!  Maybe...
 
@@ -172,10 +176,6 @@ Screenshot of your changed Inbound Security Group rules.
 2. Does `ping` tell you if a server is "working"?
 3. What protocol does `ping` use?  What does this mean about the server's firewalls?
 4. Why won't `ping` work if you specify `https://` before the domain name?
-5. Does an IP lookup always result in finding the correct domain name / URL to access the resource, and vice versa?
-6. What happens at when an `http` request is made to a server with `https` enabled?
-
-Citations:
 - <add bullets of citations / links used here>
 
 ## Extra Credit - Tattle Tale
@@ -203,3 +203,7 @@ Commands to parse `csv` for report:
 | 5     |              |     |
 
 Commands to parse `csv` for report:
+## Lab 12
+
+- Name: Rachael Ballentine
+- Email: ballentine.7@wright.edu
