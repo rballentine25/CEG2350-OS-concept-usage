@@ -60,7 +60,7 @@ ping is a tool to test network connectivity by sending out an echo to request pa
 it waits until it gets a reply and iforms the user of the round trip time and packet loss. has options like 
 -c to specify number of ping requests sent, -i for wait interval, -I to set source, etc.
 ```
-    - Resource on `ping`: https://phoenixnap.com/kb/linux-ping-command-examples
+    - Resource on `ping`: https://www.hostinger.com/tutorials/linux-ping-command-with-examples#:~:text=The%20Linux%20ping%20command%20is%20a%20tool%20for%20testing%20connectivity,%2C%20domain%2C%20or%20IP%20address.
 
 - `nslookup <IP_or_hostname>`
 ```
@@ -145,7 +145,13 @@ Translate the below IP ranges to their CIDR notation subnets:
 
 Screenshot of your changed Inbound Security Group rules.  
 ![Inbound Rules for Lab 12](inbound_rules_lab12.png)
-
+> Why should HTTP allow any IP, while SSH has restrictions?
+```
+we're assuming that any HTTP application would be publiclly available to view, like a 
+website, so it would need to allow any IPs to request information from it. SSH is meant
+to be a secure connection between two trusted devices so needs to only allow specific 
+IPs to access it. 
+```
 > Describe how you validated or can validate if your rules are working with the restrictions given.
 ```
 I know my WSU ssh rule works because it was the first one I did (while I was at home)
@@ -158,25 +164,49 @@ my AWS at homme.
 
 1. For the given server IP, describe purpose and what types of requests it does / doesn't respond to:
     - `8.8.8.8`
-        - Purpose:
-        - Responds to:
-        - Does not respond to: 
+        - Purpose: `Google DNS service to find ips/domain names`
+        - Responds to: `ping, nmap, traceroute, nslookup. opens a website when typed in a browser`
+        - Does not respond to: `curl, tcpdump`
+	`nmap found ports 53 and 443 open for tcp, 443 was for https`
     - `5.9.243.187` -> `wttr.in` -> `https://wttr.in`
-        - Purpose:
-        - Responds to:
-        - Does not respond to: 
+        - Purpose: `online weather app made of ascii characters`
+        - Responds to: `ping (not with http), nslookup, curl, traceroute. opens website in browser` 
+        - Does not respond to: `tcpdump`
+	`nmap found 9 ports open, including 80 and 443 for http and https`
     - Your AWS instance public IP
-        - Purpose:
-        - Responds to:
-        - Does not respond to: 
+        - Purpose: `gives me access to AWS?`
+        - Responds to: `ping worked, but had 100% data loss (no packets returned). nmap, nslookup, curl 
+	all worked. traceroute worked but had really weird output (30 hops, all "* * *"). also brought up
+	a webpage in browser (lab 11 html webnsite)`
+        - Does not respond to: `n/a`
+	`from my home network, nmap found only one port open, port 80 for http. this confirms my inbound 
+	security group rule worked`
     - `34.117.59.81` -> `ipinfo.io` -> `https://ipinfo.io`
-        - Purpose:
-        - Responds to:
-        - Does not respond to: 
-2. Does `ping` tell you if a server is "working"?
+        - Purpose: `shows the public ip address and info for the contacting device`
+        - Responds to: `ping, nmap, traceroute, nslookup (only ip and JUST "ipinfo.io"). curl works but only 
+	on full address with http or https, not the ip address (gets "fault filter abort" messawdw)`
+        - Does not respond to: `putting the ip address in browser search bar brings up a blank page with just
+	the words "fault filter abort". putting hostname in browser pulls up the website.`
+	`nmap found 2 ports open, 80 and 443 for http and https`  
+2. Does `ping` tell you if a server is "working"? 
+``` 
+not necessarily, since ping can be blocked by firewalls 
+source:
+“Understanding the ping command in network troubleshooting and monitoring,” Kentik, Jun. 07, 2024. Available: https://www.kentik.com/kentipedia/ping-command-in-network-troubleshooting-and-monitoring/#:~:text=Ping%20operates%20at%20the%20Internet,applications%20running%20on%20the%20host.`
+```
 3. What protocol does `ping` use?  What does this mean about the server's firewalls?
+```
+ping uses ICMP (internet control message protocol). 
+source:
+“Understanding the ping command in network troubleshooting and monitoring,” Kentik, Jun. 07, 2024. Available: https://www.kentik.com/kentipedia/ping-command-in-network-troubleshooting-and-monitoring/#:~:text=Ping%20operates%20at%20the%20Internet,applications%20running%20on%20the%20host.
+```
 4. Why won't `ping` work if you specify `https://` before the domain name?
-- <add bullets of citations / links used here>
+```
+ping uses IMCP, which is a lower level protocol than http/https so it doesn't understand http. its just
+checking the availability of an ip address/hostname, so it doesnt need http/https
+source:
+Xitoring, “Ping vs Http monitoring – Which one to choose?,” Xitoring, Mar. 12, 2024. Available: https://xitoring.com/blog/ping-vs-http/#:~:text=Higher%20Overhead%3A%20Unlike%20simple%20ICMP,or%20targets%20multiple%20web%20services.
+```
 
 ## Extra Credit - Tattle Tale
 
