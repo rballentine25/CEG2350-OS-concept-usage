@@ -166,19 +166,19 @@ my AWS at homme.
     - `8.8.8.8`
         - Purpose: `Google DNS service to find ips/domain names`
         - Responds to: `ping, nmap, traceroute, nslookup. opens a website when typed in a browser`
-        - Does not respond to: `curl, tcpdump`
+        - Does not respond to: `curl, tcpdump`  
 	`nmap found ports 53 and 443 open for tcp, 443 was for https`
     - `5.9.243.187` -> `wttr.in` -> `https://wttr.in`
         - Purpose: `online weather app made of ascii characters`
         - Responds to: `ping (not with http), nslookup, curl, traceroute. opens website in browser` 
-        - Does not respond to: `tcpdump`
+        - Does not respond to: `tcpdump`  
 	`nmap found 9 ports open, including 80 and 443 for http and https`
     - Your AWS instance public IP
         - Purpose: `gives me access to AWS?`
         - Responds to: `ping worked, but had 100% data loss (no packets returned). nmap, nslookup, curl 
 	all worked. traceroute worked but had really weird output (30 hops, all "* * *"). also brought up
 	a webpage in browser (lab 11 html webnsite)`
-        - Does not respond to: `n/a`
+        - Does not respond to: `n/a`  
 	`from my home network, nmap found only one port open, port 80 for http. this confirms my inbound 
 	security group rule worked`
     - `34.117.59.81` -> `ipinfo.io` -> `https://ipinfo.io`
@@ -186,54 +186,33 @@ my AWS at homme.
         - Responds to: `ping, nmap, traceroute, nslookup (only ip and JUST "ipinfo.io"). curl works but only 
 	on full address with http or https, not the ip address (gets "fault filter abort" messawdw)`
         - Does not respond to: `putting the ip address in browser search bar brings up a blank page with just
-	the words "fault filter abort". putting hostname in browser pulls up the website.`
+	the words "fault filter abort". putting hostname in browser pulls up the website.`  
 	`nmap found 2 ports open, 80 and 443 for http and https`  
 2. Does `ping` tell you if a server is "working"? 
 ``` 
 not necessarily, since ping can be blocked by firewalls 
 source:
-“Understanding the ping command in network troubleshooting and monitoring,” Kentik, Jun. 07, 2024. Available: https://www.kentik.com/kentipedia/ping-command-in-network-troubleshooting-and-monitoring/#:~:text=Ping%20operates%20at%20the%20Internet,applications%20running%20on%20the%20host.`
+“Understanding the ping command in network troubleshooting and monitoring,” Kentik, Jun. 07, 2024. 
+Available: https://www.kentik.com/kentipedia/ping-command-in-network-troubleshooting-and-monitoring/#:~:
+text=Ping%20operates%20at%20the%20Internet,applications%20running%20on%20the%20host.`
 ```
 3. What protocol does `ping` use?  What does this mean about the server's firewalls?
 ```
 ping uses ICMP (internet control message protocol). 
 source:
-“Understanding the ping command in network troubleshooting and monitoring,” Kentik, Jun. 07, 2024. Available: https://www.kentik.com/kentipedia/ping-command-in-network-troubleshooting-and-monitoring/#:~:text=Ping%20operates%20at%20the%20Internet,applications%20running%20on%20the%20host.
+“Understanding the ping command in network troubleshooting and monitoring,” Kentik, Jun. 07, 2024. 
+Available: https://www.kentik.com/kentipedia/ping-command-in-network-troubleshooting-and-monitoring/#:~:
+text=Ping%20operates%20at%20the%20Internet,applications%20running%20on%20the%20host.
 ```
 4. Why won't `ping` work if you specify `https://` before the domain name?
 ```
 ping uses IMCP, which is a lower level protocol than http/https so it doesn't understand http. its just
 checking the availability of an ip address/hostname, so it doesnt need http/https
 source:
-Xitoring, “Ping vs Http monitoring – Which one to choose?,” Xitoring, Mar. 12, 2024. Available: https://xitoring.com/blog/ping-vs-http/#:~:text=Higher%20Overhead%3A%20Unlike%20simple%20ICMP,or%20targets%20multiple%20web%20services.
+Xitoring, “Ping vs Http monitoring – Which one to choose?,” Xitoring, Mar. 12, 2024. 
+Available: https://xitoring.com/blog/ping-vs-http/#:~:text=Higher%20Overhead%3A%20Unlike%20simple%20ICMP,
+or%20targets%20multiple%20web%20services.
 ```
 
 ## Extra Credit - Tattle Tale
-
-### IPv4 Source Report
-
-| Rank  | IPv4 Address | # of Attempts |
-| ----- | ------------ | ------------- |
-| 1     |              |     |
-| 2     |              |     |
-| 3     |              |     |
-| 4     |              |     |
-| 5     |              |     |
-
-Commands to parse `csv` for report:
-
-### Username Used Report
-
-| Rank  | Username     | # of Attempts |
-| ----- | ------------ | ------------- |
-| 1     |              |     |
-| 2     |              |     |
-| 3     |              |     |
-| 4     |              |     |
-| 5     |              |     |
-
-Commands to parse `csv` for report:
-## Lab 12
-
-- Name: Rachael Ballentine
-- Email: ballentine.7@wright.edu
+n/a
