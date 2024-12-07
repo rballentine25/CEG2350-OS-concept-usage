@@ -58,6 +58,15 @@ lab topics:
 6. Regular expressions
 7. grep, sed, and awk
 
+# FINAL TOPICS
+lab topics:
+* Lab 7: system hardware info, setting up VM
+* Lab 8: DID NOT DO. filesystems and partition tables. creating a new partion, creating a filesystem, and mounting it. creating a virtual filesystem
+* Lab 9: process control: using kill on process, moving background to foreground, tmux
+* Lab 10: compilers, method for compiling cpp code in terminal, comments and userguide for c++ code, git branch, makefiles
+* Lab 11: tar for zip files, sftp to download tar.gz files, extracting tar file and using apache2 for website, ssh keys (didn't do)
+* Lab 12: linux network commands, network info for windows/aws, subnet translation, security groups
+  
 ## Computer Hardware, Boot Process, and Data on Disks:
 
 1. Computer Hardware:
@@ -164,15 +173,6 @@ BOOT PROCESS
    - checkout
    - merge
 
-# FINAL TOPICS
-lab topics:
-* Lab 7: system hardware info, setting up VM
-* Lab 8: DID NOT DO. filesystems and partition tables. creating a new partion, creating a filesystem, and mounting it. creating a virtual filesystem
-* Lab 9: process control: using kill on process, moving background to foreground, tmux
-* Lab 10: compilers, method for compiling cpp code in terminal, comments and userguide for c++ code, git branch, makefiles
-* Lab 11: tar for zip files, sftp to download tar.gz files, extracting tar file and using apache2 for website, ssh keys (didn't do)
-* Lab 12: linux network commands, network info for windows/aws, subnet translation, security groups
-  
 ## Virtual Machines
 
 1. Set of resources virtually "defined"
