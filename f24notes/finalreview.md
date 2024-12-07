@@ -61,25 +61,93 @@ lab topics:
 ## Computer Hardware, Boot Process, and Data on Disks:
 
 1. Computer Hardware:
-   - Von Neumann machine: Control unit; instruction fetch, decode, and execution
-     - light here, do additional reading
-   - CPU
-   - RAM
+   - Von Neumann machine: 
+	Control unit; instruction fetch, decode, and execution
+	first version of the modern computer. allowed for stored 
+	programs, which was the beginning of modern programming 
+	languages. successor of the ENIAC computer.     
+   - CPU: 
+	central processing unit. operates in cycles measured by 
+	clock speed. includes ALU, CU, registers. does all 
+	instruction execution: fetch, decode, execute.
+	Each CPU can have different number of cores which allows
+	for multithreading. Cache size is also important. 
+	ARM processors based on reduced instruction set computer
+	architecture. used in things like smartphones, RPi
+   - RAM: 
+	random access volatile memory. stores data on short-term
+	basis. 
    - Motherboard
-   - Disks (HDD, SSD, NVME)
-   - GPU
+   - Disks(HDD, SSD, NVME):
+	* HDD is Hard Disk Drive: stored magnetically on disks. disks
+	experience fragmentation over time. has a disk that is spun and 
+	read with an actuator arm
+	* SSD is Solid State Drive. stores date on semi-conductor cells
+	and uses NAND based flash memory (electrical charges). also has 
+	built-in controller to manage storage/retreival, including 
+	garbage collection. no moving parts, so fragmentation is not 
+	as big an issue. also uses wear-leveling algorithms which by
+	default means data is scattered throughout the drive (designed
+	for fragmentation-like usage)
+	* NVME is non-volatime memory express. it is a protocol used on 
+	SSDs and uses PCle (Peripheral component interconnect express)
+	interface to improve read/write speeds
+   - GPU:
+	discrete / dedicated vs integrated): graphics processing unit. 
+	specialied processor to accelerate rendering of images, etc.
+	* integrated: built directly into CPU, shares RAM with CPU. more 
+	basic, found in laptops and budget systems.
+	* discrete/dedicated: separate graphics card installed in a slot 
+	on the motherboard. has its own dedicated memory and processing 
+	resources
+   - OTHER TERMS:
+	* Motherboard: distributes electricity and facilitates comm 
+	between CPU, RAM, etc. NORTHBRIDGE is data connections to CPU, 
+	RAM, PCle. SOUTHBRIDGE is data connection to BIOS, USB, SATA, and
+	PCI bus (where SATA = serial advanced technology attachment, and
+	PCI = peripheral component interconnect, connects internals like 
+	CPU, GPU, network cards)  
+
 2. Booting of OS
-   - Power on self-test (POST)
+   - Power on self-test (POST): 
+	triggered by BIOS/UEFI. tests and initializes CPI, RAM, etc etc to
+	make sure all important components are connected and working. used
+	to beep to tell you whether it was successful. 
    - BIOS vs UEFI
-   - MBR vs GPT
+	* BIOS = Basic Input Output System. stored on a read-only memory
+	(ROM) chip, which meant originally it could not be updated.
+	16bit mode, MBR for bootloader, max 2.2TB harddrive support. only
+	keystrokes on boot page, no mouse
+	* UEFI = Unified Extensible Firmware Interface. 
+	32 or 64bit mode, GPT, 4.9b TB harddrive, 
+	allows network booting/remote diagnostics, and secure boot. allows
+	GUI for configuration (including mouse support)
    - Boot loaders: NTLDR, GRUB
    - kernel vs OS
+   - OTHER TERMS:
+	* cold booting: first time start/power on after shutdown
+	* hot boot: reboot or wake from sleep
 3. Virtual memory
    - What is it and how does it work
 4. Disks
    - MBR vs GPT
+	* MBR: Master Boot Record
+        * GPT: GUID Partition Table
    - partitions
-   - fragmentation
+   - fragmentation: 
+	happens in older disks when there is not enough memory on a 
+	storage device to store a file in one continuous memory block. 
+	instead, the file is broken up across several non-continous blocks
+	which means it takes the system much longer to access the file 
+	(has to find all the scattered parts first). this is due to how 
+	memory is allocated/deallocated over time as smaller files are 
+	created and deleted file fragmentation is resolved by zoning 
+	memory or preallocating memory
+
+BOOT PROCESS
+1. CPU powers on and provides instruction to run BIOS/UEFI
+2. BIOS/UEFI runs POST and if successful, loads the bootloader
+3. bootloader
 
 ## Git (version control)
 
