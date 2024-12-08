@@ -156,7 +156,7 @@ lab topics:
    - checkout: switch to a different branch
 
 
-## Virtual Machines
+## DONE Virtual Machines
 
 1. Set of resources virtually "defined": VMs are allocated a certain amount of the physical resources (a # of cores, an amount of RAM and hard disk, NICs, etc) by the hypervisor. the VM thinks its a real computer but its just a facade
 2. Resource allocation managed by hypervisor
@@ -238,13 +238,7 @@ differs from regular decimal system as it is base 2 not 10
    - creating new service units / managing existing service units
       - stop, start, restart, enable, disable
 4. Process scheduling & priorities
-5. ~~Thread vs Fork~~
-6. ~~CPU & kernel memory management~~
-   - page faults (minor & major)
-   - virtual memory
-7. ~~Single CPU multi-tasking & context switching~~
-8. ~~Multiple CPUs and SMP (Symmetric multiprocessing)~~
-8. Commands: kill, ps, top, nice, bg, fg, jobs, screen, tmux
+5. Commands: kill, ps, top, nice, bg, fg, jobs, screen, tmux
 
 ## Command line programming
 
@@ -269,14 +263,10 @@ differs from regular decimal system as it is base 2 not 10
    - targets
    - dependencies
    - actions
-4. ~~Memory handling in programming~~
-   - size of memory - Bits (1), bytes (8 bits), word (16, 32, or 64 bits)
-   - stack vs. heap
-6. Libraries & dynamic linking (loads and links the shared libraries needed by an executable when it is executed)
-7. Overview of command line debugging
-8. ~~Install from source w/ make or installation scripts~~
-9. Compression (including `tar` & `gzip`)
-10. Commands: make, which, whereis, python, gcc, java, javac, ~~ldd~~, ~~strace~~
+4. Libraries & dynamic linking (loads and links the shared libraries needed by an executable when it is executed)
+5. Overview of command line debugging
+6. Compression (including `tar` & `gzip`)
+7. Commands: make, which, whereis, python, gcc, java, javac, ~~ldd~~, ~~strace~~
 
 ## Networking
 
@@ -287,7 +277,7 @@ differs from regular decimal system as it is base 2 not 10
      - HTTPS
        - Certificate Authorities & browser trust
      - SSH
-       - private / public key pairs, ~~`config` & `authorized_keys` files~~
+       - private / public key pairs
      - SFTP
    - transport
      - ports
@@ -313,7 +303,6 @@ differs from regular decimal system as it is base 2 not 10
 4. Firewalls
    - inbound / INPUT / ingress
    - outbound / OUTPUT / egress
-   - ~~whitelist vs blacklist & default allow vs deny~~
    - common sense rules & trusted networks
 5. Commands: ip, route, arp, iptables, ping, curl, wget
    - Useful, not on exam: tcpdump, nmap
