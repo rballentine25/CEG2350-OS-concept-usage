@@ -51,7 +51,7 @@ lab topics:
    - conditionals (`test`)
    - arguments
    - if
-   - for
+   - fori
    - while
    - getopts
    - case
@@ -67,7 +67,7 @@ lab topics:
 * Lab 11: tar for zip files, sftp to download tar.gz files, extracting tar file and using apache2 for website, ssh keys (didn't do)
 * Lab 12: linux network commands, network info for windows/aws, subnet translation, security groups
   
-## Computer Hardware, Boot Process, and Data on Disks:
+## DONE Computer Hardware, Boot Process, and Data on Disks:
 
 1. Computer Hardware:
    - Von Neumann machine:   
@@ -205,16 +205,16 @@ lab topics:
 
 1. Git remote (servers) vs. clients (local)
 2. Basic commands:
-   - clone
-   - add
-   - commit
-   - push
-   - pull
-     - fetch
-     - merge
-   - branch
-   - checkout
-   - merge
+   - clone: clone a repo into local server
+   - add: stage a file for commit
+   - commit: save staged files to the local repo
+   - push: uploads changes saved to local repo to remote repo
+   - pull: downloads changes from remote repo and automatically merges them into your local repo
+     - fetch: downloads changes from a remote repo and stores them in your local repo, but DOES NOT MERGE THEM
+     - merge: combines two branches into one branch. to use, have to switch to main branch using checkout then merge
+   - branch: used by itself, will list all branches in the repo. with a name, will create a new branch. to rename, use <newname> -m <oldname>
+   - checkout: switch to a different branch
+
 
 ## Virtual Machines
 
