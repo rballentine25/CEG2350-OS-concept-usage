@@ -201,7 +201,7 @@ lab topics:
    - bootloader loads the filesystem drivers, reads config file, and loads     the kernel into RAM
    - kernel takes control and starts processes to load and run OS, including starting init (systemd) 
 
-# Git (version control)
+## DONE Git (version control)
 
 1. Git remote (servers) vs. clients (local)
 2. Basic commands:
@@ -228,7 +228,7 @@ lab topics:
 4. Can install an operating system to a disk using an iso (machine image)
 5. What can you do in a virtual machine?
 
-## Devices, Filesystems, Data Storage
+## DONE Devices, Filesystems, Data Storage
 
 1. Devices
    Devices refers to a physical or virtual hardware component that 
@@ -244,25 +244,46 @@ managed by device drivers.
 	character devices transfer data as a continuous stream of bytes
 	without fixed size. printers, mice, keyboards, all char devices
 2. Storing data on a disk
-   - partition table
-   - partitions
-   - filesystem
-   - mounting filesystem
+   - partitions:  
+	partition is a division of a storage device into independant sections. each section can act as its own disk with its own filesystem. need at least one partition to separate data from kernel. basically just chunks of block devices
 3. Filesystems
-   - journaling
-     - light here, recommend additional reading
+   - a filesystem establishes the structure and logic rules used to manage groups of data and their names. 
+   - journaling 
+	 journaling filesystems keep a log of actions to be performed just before actually performing them. ext4 and NTFS both do this. the data log is stored in a file called a journal, which in linux can be accessed with "journalctl" command
    - Windows: vfat, ntfs
    - Linux: ext4
+   - Apple: HFS+
    - Special: swap
-4. Inodes
-   - hard links
-   - soft links
-   - cp vs mv
-5. File locks
-6. Commands: df, du, mkfs, gdisk, fdisk, parted, mount, umount, stat
+4. Inodes  
+an inode is a datastructure that stores METADATA about a file/directory, including file type, size, ownership, permissions, timestamps, and pointers to actual data blocks. 
+   - hard links:  
+	direct reference to inode data. multiple hard links to same inode will point to the same data. changes made via one hard link re immediately reflected in other links (like a shallow copy)
+   - soft links:  
+	link points to another inode by storing pathname, not to the actual data? removing the symbo link has no effect, but deleting the data will cause a broken link. can span across filesystems.	
+   - cp vs mv:  
+	    * cp creates new inode for copied file
+	    * mv keeps the same inode on same filesystem
+5. File locks: idk what this is but im not looking it up
+6. Commands:   
+	    * df: disk free, displays amount of disk space available on mounted filesystems. -h for human readable, -T for type of filesystem
+	    * du: estimate disk space used by files/directories. -h for human readable, -s for summary of size
+	    * mkfs: make file system. ERASES ALL DATA ON PARTITION
+	    * gdisk: tool for managing GUID partitions
+	    * fdisk: tool for managing MBR partitions
+	    * parted: more advanced tool for managing partition tables
+	    * stat: displays metadata about a file or directory
+	    * mount and unmount: mount and unmount filesystems. have to specifiy path not just name
 7. OTHER:
-   - MiB = mebibyte, unit of digital info storage. = 2^20 bytes
-	   differs from regular decimal system as it is base 2 not 10
+   - MiB = mebibyte, unit of digital info storage. = 2^20 bytes  
+differs from regular decimal system as it is base 2 not 10
+   - MOUNTING filesystems:
+	    * pick a file system (should match OS)
+	    * choose mount point (choose partition to be known as root OS). /mnt/ is a common safe playground. m
+	    * create a block device for the partition/filesystem to be mounted 
+	    * mount using:  
+	"mount -t <type> <device> <mountpoint>"    
+	    * setup username and password
+	
 ## Processes
 
 1. init process / kernel level vs user level processes
