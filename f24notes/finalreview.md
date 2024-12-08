@@ -86,7 +86,13 @@ lab topics:
    - RAM: 
 	random access volatile memory. stores data on short-term
 	basis. 
-   - Motherboard
+   - Motherboard:
+	distributes electricity and facilitates comm etween CPU, RAM, etc.
+	NORTHBRIDGE is data connections to CPU,RAM, PCle. 
+	OUTHBRIDGE is data connection to BIOS, USB, SATA, and PCI bus 
+	(where SATA = serial advanced technology attachment, and PCI = 
+	peripheral component interconnect, connects internals like
+        CPU, GPU, network cards)
    - Disks(HDD, SSD, NVME):
 	* HDD is Hard Disk Drive: stored magnetically on disks. disks
 	experience fragmentation over time. has a disk that is spun and 
@@ -109,13 +115,6 @@ lab topics:
 	* discrete/dedicated: separate graphics card installed in a slot 
 	on the motherboard. has its own dedicated memory and processing 
 	resources
-   - OTHER TERMS:
-	* Motherboard: distributes electricity and facilitates comm 
-	between CPU, RAM, etc. NORTHBRIDGE is data connections to CPU, 
-	RAM, PCle. SOUTHBRIDGE is data connection to BIOS, USB, SATA, and
-	PCI bus (where SATA = serial advanced technology attachment, and
-	PCI = peripheral component interconnect, connects internals like 
-	CPU, GPU, network cards)  
 
 2. Booting of OS
    - Power on self-test (POST): 
@@ -132,17 +131,60 @@ lab topics:
 	allows network booting/remote diagnostics, and secure boot. allows
 	GUI for configuration (including mouse support)
    - Boot loaders: NTLDR, GRUB
+	Bootloader task include loading filesystem drivers, read config 
+	file for OS, run supporting modules,display OS menu(if applicable)
+	and load the selected OS 
+	* NTLDR
+	default bootloader for Windows NT, 2000, XP. list of OSs stored
+	in BOOT.INI partition. needs helper program to detect hardware
+	* GRUB
+	popular bootloader for linux. boot settings stored in grub.cfg
+	file or menu.lst. modular bootloader (can load additional mods 
+	from disk)
+	* BOOTMGR 
+	new windows bootloader, used on windows 11. OS list is read from 
+	BCD file in BOOT directory. self-contained (no helper programs)
    - kernel vs OS
+	* OS: system software which provides gui interface for users to           interact with the system, defines file organization, manages              memory and device drivers, and translates user input into                 commands the hardware can understand. OS is like a management             team, which takes in input from the client and passes it off to           the correct department
+	* kernel is the intermediary between the system hardware and soft	ware. it helps to scale/standardize the system hardware to match 
+	what the OS expects. it also manages system resources by doing 
+	stuff like memory management, CPU task scheduling, device 
+	management, recieves service requests from processes. gets loaded 
+	into RAM by the bootloader and just stays there. is the core/brain
+	of the OS: it recieves the translated user instructions from the
+	OS, then gives orders to the hardware to carry out tasks
+	* types of kernel: monolithic kernel and microkernel	  
    - OTHER TERMS:
 	* cold booting: first time start/power on after shutdown
 	* hot boot: reboot or wake from sleep
+
 3. Virtual memory
    - What is it and how does it work
+	virtual memory uses a portion of the disk drive to emulate RAM in
+	order to increase the capacity of main memory. this allows the 
+	system to handle processes that require more memory than what
+	is actually available in RAM. memory that is not being used is 
+	"swapped" into external storage and is assigned a memory address 
+	even tho its not stored in RAM. there are two types of virtual 
+	memory: paging and segmenting
+	* paging divides the memory into fixed size blocks that are 
+	passed between RAM and external storage. MMU uses a page table to
+	keep track of which virtual (external storage) pages map to wich
+	physical pages in RAM. when RAM is full, currently unused pages
+	are swapped out with one that is being called by the program
+
 4. Disks
    - MBR vs GPT
+	both primary partition tables which hold the system bootloader. 
+	decide where each partitions start/end and which are bootable
 	* MBR: Master Boot Record
+	4 primary partitions, 2TB disk size cap. holds partition table
+	and bootloader in same partition. used by BIOS
         * GPT: GUID Partition Table
-   - partitions
+	128 partitions; each gets a unique identifier (GUID). bootloader 
+	is sored in EFI partition (where boot files are stored for uefi
+	systems). includes a MBR in first partition for backwards
+	compatability
    - fragmentation: 
 	happens in older disks when there is not enough memory on a 
 	storage device to store a file in one continuous memory block. 
@@ -153,12 +195,13 @@ lab topics:
 	created and deleted file fragmentation is resolved by zoning 
 	memory or preallocating memory
 
-BOOT PROCESS
-1. CPU powers on and provides instruction to run BIOS/UEFI
-2. BIOS/UEFI runs POST and if successful, loads the bootloader
-3. bootloader
+5. BOOT PROCESS
+   - CPU powers on and provides instruction to run BIOS/UEFI
+   - BIOS/UEFI runs POST and if successful, loads the bootloader
+   - bootloader loads the filesystem drivers, reads config file, and loads     the kernel into RAM
+   - kernel takes control and starts processes to load and run OS, including starting init (systemd) 
 
-## Git (version control)
+# Git (version control)
 
 1. Git remote (servers) vs. clients (local)
 2. Basic commands:
@@ -177,14 +220,29 @@ BOOT PROCESS
 
 1. Set of resources virtually "defined"
 2. Resource allocation managed by hypervisor
+	* hypervisor: separates physical resources from virtual 
+	environments. hypervisors can sit directly on top of OS (type 2, 
+	client/hosted) or installed directly onto hardware (type 1, bare
+	metal). they take your system's physical resources and divide them
+	amongst virtual environments.
 3. Can install an operating system to a disk using an iso (machine image)
 4. What can you do in a virtual machine?
 
 ## Devices, Filesystems, Data Storage
 
 1. Devices
+   Devices refers to a physical or virtual hardware component that 
+interacts with the computer system. devices are classified based on how 
+they interact with the OS and applications. can be divided into hardware 
+and virtual; input, output, storage, or communication. two main types
+are block and virtual, where the difference is how they transfer data.
+managed by device drivers. 
    - block - SSD, HDD, NVME, CD, USB
+	block devices store and transfer data in fixed size blocks and 
+	allow random access to data. 
    - character - /dev/null, /dev/zero, /dev/random
+	character devices transfer data as a continuous stream of bytes
+	without fixed size. printers, mice, keyboards, all char devices
 2. Storing data on a disk
    - partition table
    - partitions
@@ -196,14 +254,15 @@ BOOT PROCESS
    - Windows: vfat, ntfs
    - Linux: ext4
    - Special: swap
-4. Fragmentation and block devices
-5. Inodes
+4. Inodes
    - hard links
    - soft links
    - cp vs mv
-6. File locks
-7. Commands: df, du, mkfs, gdisk, fdisk, parted, mount, umount, stat
-
+5. File locks
+6. Commands: df, du, mkfs, gdisk, fdisk, parted, mount, umount, stat
+7. OTHER:
+   - MiB = mebibyte, unit of digital info storage. = 2^20 bytes
+	   differs from regular decimal system as it is base 2 not 10
 ## Processes
 
 1. init process / kernel level vs user level processes
