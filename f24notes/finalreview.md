@@ -158,15 +158,14 @@ lab topics:
 
 ## Virtual Machines
 
-1. Set of resources virtually "defined"
+1. Set of resources virtually "defined": VMs are allocated a certain amount of the physical resources (a # of cores, an amount of RAM and hard disk, NICs, etc) by the hypervisor. the VM thinks its a real computer but its just a facade
 2. Resource allocation managed by hypervisor
-    * hypervisor: separates physical resources from virtual 
-	environments. hypervisors can sit directly on top of OS (type 2, 
-	client/hosted) or installed directly onto hardware (type 1, bare
-	metal). they take your system's physical resources and divide them
-	amongst virtual environments.
-4. Can install an operating system to a disk using an iso (machine image)
-5. What can you do in a virtual machine?
+    * hypervisor: separates physical resources from virtual environments. hypervisors can sit directly on top of OS (type 2, client/hosted) or installed directly onto hardware (type 1, bare metal). they take your system's physical resources and divide them amongst virtual environments.
+4. Can install an operating system to a disk using an iso (machine image). Iso = optical disk image, is a standard format for bootable image of an OS
+5. What can you do in a virtual machine?  
+	VMS give you the option to run mutliple OSs on the same device. they're good for testing software or OS configs without nuking your actual system since they have isolation between them and other OSs. older software can be installed on them. etc etc  
+  
+OTHER NOTES: we used VirtualBox for VMs
 
 ## DONE Devices, Filesystems, Data Storage
 
