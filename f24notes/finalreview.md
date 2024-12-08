@@ -70,12 +70,12 @@ lab topics:
 ## Computer Hardware, Boot Process, and Data on Disks:
 
 1. Computer Hardware:
-   - Von Neumann machine: 
+   - Von Neumann machine:   
 	Control unit; instruction fetch, decode, and execution
 	first version of the modern computer. allowed for stored 
 	programs, which was the beginning of modern programming 
 	languages. successor of the ENIAC computer.     
-   - CPU: 
+   - CPU:   
 	central processing unit. operates in cycles measured by 
 	clock speed. includes ALU, CU, registers. does all 
 	instruction execution: fetch, decode, execute.
@@ -83,83 +83,83 @@ lab topics:
 	for multithreading. Cache size is also important. 
 	ARM processors based on reduced instruction set computer
 	architecture. used in things like smartphones, RPi
-   - RAM: 
+   - RAM:   
 	random access volatile memory. stores data on short-term
 	basis. 
-   - Motherboard:
+   - Motherboard:  
 	distributes electricity and facilitates comm etween CPU, RAM, etc.
 	NORTHBRIDGE is data connections to CPU,RAM, PCle. 
 	OUTHBRIDGE is data connection to BIOS, USB, SATA, and PCI bus 
 	(where SATA = serial advanced technology attachment, and PCI = 
 	peripheral component interconnect, connects internals like
         CPU, GPU, network cards)
-   - Disks(HDD, SSD, NVME):
-	* HDD is Hard Disk Drive: stored magnetically on disks. disks
+   - Disks(HDD, SSD, NVME):  
+	    * HDD is Hard Disk Drive: stored magnetically on disks. disks
 	experience fragmentation over time. has a disk that is spun and 
 	read with an actuator arm
-	* SSD is Solid State Drive. stores date on semi-conductor cells
+	    * SSD is Solid State Drive. stores date on semi-conductor cells
 	and uses NAND based flash memory (electrical charges). also has 
 	built-in controller to manage storage/retreival, including 
 	garbage collection. no moving parts, so fragmentation is not 
 	as big an issue. also uses wear-leveling algorithms which by
 	default means data is scattered throughout the drive (designed
 	for fragmentation-like usage)
-	* NVME is non-volatime memory express. it is a protocol used on 
+	    * NVME is non-volatime memory express. it is a protocol used on 
 	SSDs and uses PCle (Peripheral component interconnect express)
 	interface to improve read/write speeds
-   - GPU:
+   - GPU:  
 	discrete / dedicated vs integrated): graphics processing unit. 
 	specialied processor to accelerate rendering of images, etc.
-	* integrated: built directly into CPU, shares RAM with CPU. more 
+	    * integrated: built directly into CPU, shares RAM with CPU. more 
 	basic, found in laptops and budget systems.
-	* discrete/dedicated: separate graphics card installed in a slot 
+	    * discrete/dedicated: separate graphics card installed in a slot 
 	on the motherboard. has its own dedicated memory and processing 
 	resources
 
 2. Booting of OS
-   - Power on self-test (POST): 
+   - Power on self-test (POST):   
 	triggered by BIOS/UEFI. tests and initializes CPI, RAM, etc etc to
 	make sure all important components are connected and working. used
 	to beep to tell you whether it was successful. 
-   - BIOS vs UEFI
-	* BIOS = Basic Input Output System. stored on a read-only memory
+   - BIOS vs UEFI  
+	    * BIOS = Basic Input Output System. stored on a read-only memory
 	(ROM) chip, which meant originally it could not be updated.
 	16bit mode, MBR for bootloader, max 2.2TB harddrive support. only
 	keystrokes on boot page, no mouse
-	* UEFI = Unified Extensible Firmware Interface. 
+	    * UEFI = Unified Extensible Firmware Interface. 
 	32 or 64bit mode, GPT, 4.9b TB harddrive, 
 	allows network booting/remote diagnostics, and secure boot. allows
 	GUI for configuration (including mouse support)
-   - Boot loaders: NTLDR, GRUB
+   - Boot loaders: NTLDR, GRUB  
 	Bootloader task include loading filesystem drivers, read config 
 	file for OS, run supporting modules,display OS menu(if applicable)
 	and load the selected OS 
-	* NTLDR
+	    * NTLDR  
 	default bootloader for Windows NT, 2000, XP. list of OSs stored
 	in BOOT.INI partition. needs helper program to detect hardware
-	* GRUB
+	    * GRUB  
 	popular bootloader for linux. boot settings stored in grub.cfg
 	file or menu.lst. modular bootloader (can load additional mods 
 	from disk)
-	* BOOTMGR 
+	    * BOOTMGR   
 	new windows bootloader, used on windows 11. OS list is read from 
 	BCD file in BOOT directory. self-contained (no helper programs)
-   - kernel vs OS
-	* OS: system software which provides gui interface for users to           interact with the system, defines file organization, manages              memory and device drivers, and translates user input into                 commands the hardware can understand. OS is like a management             team, which takes in input from the client and passes it off to           the correct department
-	* kernel is the intermediary between the system hardware and soft	ware. it helps to scale/standardize the system hardware to match 
+   - kernel vs OS  
+	    * OS:   system software which provides gui interface for users to           interact with the system, defines file organization, manages              memory and device drivers, and translates user input into                 commands the hardware can understand. OS is like a management             team, which takes in input from the client and passes it off to           the correct department  
+	    * kernel is the intermediary between the system hardware and soft	ware. it helps to scale/standardize the system hardware to match 
 	what the OS expects. it also manages system resources by doing 
 	stuff like memory management, CPU task scheduling, device 
 	management, recieves service requests from processes. gets loaded 
 	into RAM by the bootloader and just stays there. is the core/brain
 	of the OS: it recieves the translated user instructions from the
 	OS, then gives orders to the hardware to carry out tasks
-	* types of kernel: monolithic kernel and microkernel	  
+	    * types of kernel: monolithic kernel and microkernel	  
    - OTHER TERMS:
-	* cold booting: first time start/power on after shutdown
-	* hot boot: reboot or wake from sleep
+	    * cold booting: first time start/power on after shutdown
+	    * hot boot: reboot or wake from sleep
 
 3. Virtual memory
-   - What is it and how does it work
+   - What is it and how does it work  
 	virtual memory uses a portion of the disk drive to emulate RAM in
 	order to increase the capacity of main memory. this allows the 
 	system to handle processes that require more memory than what
@@ -167,25 +167,25 @@ lab topics:
 	"swapped" into external storage and is assigned a memory address 
 	even tho its not stored in RAM. there are two types of virtual 
 	memory: paging and segmenting
-	* paging divides the memory into fixed size blocks that are 
+	    * paging divides the memory into fixed size blocks that are 
 	passed between RAM and external storage. MMU uses a page table to
 	keep track of which virtual (external storage) pages map to wich
 	physical pages in RAM. when RAM is full, currently unused pages
 	are swapped out with one that is being called by the program
 
 4. Disks
-   - MBR vs GPT
+   - MBR vs GPT  
 	both primary partition tables which hold the system bootloader. 
 	decide where each partitions start/end and which are bootable
-	* MBR: Master Boot Record
+	    * MBR: Master Boot Record
 	4 primary partitions, 2TB disk size cap. holds partition table
 	and bootloader in same partition. used by BIOS
-        * GPT: GUID Partition Table
+	    * GPT: GUID Partition Table
 	128 partitions; each gets a unique identifier (GUID). bootloader 
 	is sored in EFI partition (where boot files are stored for uefi
 	systems). includes a MBR in first partition for backwards
 	compatability
-   - fragmentation: 
+   - fragmentation:   
 	happens in older disks when there is not enough memory on a 
 	storage device to store a file in one continuous memory block. 
 	instead, the file is broken up across several non-continous blocks
@@ -220,13 +220,13 @@ lab topics:
 
 1. Set of resources virtually "defined"
 2. Resource allocation managed by hypervisor
-	* hypervisor: separates physical resources from virtual 
+    * hypervisor: separates physical resources from virtual 
 	environments. hypervisors can sit directly on top of OS (type 2, 
 	client/hosted) or installed directly onto hardware (type 1, bare
 	metal). they take your system's physical resources and divide them
 	amongst virtual environments.
-3. Can install an operating system to a disk using an iso (machine image)
-4. What can you do in a virtual machine?
+4. Can install an operating system to a disk using an iso (machine image)
+5. What can you do in a virtual machine?
 
 ## Devices, Filesystems, Data Storage
 
@@ -237,10 +237,10 @@ they interact with the OS and applications. can be divided into hardware
 and virtual; input, output, storage, or communication. two main types
 are block and virtual, where the difference is how they transfer data.
 managed by device drivers. 
-   - block - SSD, HDD, NVME, CD, USB
+       - block - SSD, HDD, NVME, CD, USB
 	block devices store and transfer data in fixed size blocks and 
 	allow random access to data. 
-   - character - /dev/null, /dev/zero, /dev/random
+       - character - /dev/null, /dev/zero, /dev/random
 	character devices transfer data as a continuous stream of bytes
 	without fixed size. printers, mice, keyboards, all char devices
 2. Storing data on a disk
