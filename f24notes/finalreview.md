@@ -230,31 +230,31 @@ lab topics:
 
 ## DONE Devices, Filesystems, Data Storage
 
-1. Devices
+1. Devices  
    Devices refers to a physical or virtual hardware component that 
 interacts with the computer system. devices are classified based on how 
 they interact with the OS and applications. can be divided into hardware 
 and virtual; input, output, storage, or communication. two main types
 are block and virtual, where the difference is how they transfer data.
-managed by device drivers. 
-       - block - SSD, HDD, NVME, CD, USB
+managed by device drivers.
+    * block - SSD, HDD, NVME, CD, USB  
 	block devices store and transfer data in fixed size blocks and 
-	allow random access to data. 
-       - character - /dev/null, /dev/zero, /dev/random
+	allow random access to data.
+    * character - /dev/null, /dev/zero, /dev/random  
 	character devices transfer data as a continuous stream of bytes
 	without fixed size. printers, mice, keyboards, all char devices
-2. Storing data on a disk
+3. Storing data on a disk
    - partitions:  
 	partition is a division of a storage device into independant sections. each section can act as its own disk with its own filesystem. need at least one partition to separate data from kernel. basically just chunks of block devices
-3. Filesystems
+4. Filesystems
    - a filesystem establishes the structure and logic rules used to manage groups of data and their names. 
-   - journaling 
+   - journaling   
 	 journaling filesystems keep a log of actions to be performed just before actually performing them. ext4 and NTFS both do this. the data log is stored in a file called a journal, which in linux can be accessed with "journalctl" command
    - Windows: vfat, ntfs
    - Linux: ext4
    - Apple: HFS+
    - Special: swap
-4. Inodes  
+5. Inodes  
 an inode is a datastructure that stores METADATA about a file/directory, including file type, size, ownership, permissions, timestamps, and pointers to actual data blocks. 
    - hard links:  
 	direct reference to inode data. multiple hard links to same inode will point to the same data. changes made via one hard link re immediately reflected in other links (like a shallow copy)
@@ -263,17 +263,17 @@ an inode is a datastructure that stores METADATA about a file/directory, includi
    - cp vs mv:  
 	    * cp creates new inode for copied file
 	    * mv keeps the same inode on same filesystem
-5. File locks: idk what this is but im not looking it up
-6. Commands:   
-	    * df: disk free, displays amount of disk space available on mounted filesystems. -h for human readable, -T for type of filesystem
-	    * du: estimate disk space used by files/directories. -h for human readable, -s for summary of size
-	    * mkfs: make file system. ERASES ALL DATA ON PARTITION
-	    * gdisk: tool for managing GUID partitions
-	    * fdisk: tool for managing MBR partitions
-	    * parted: more advanced tool for managing partition tables
-	    * stat: displays metadata about a file or directory
-	    * mount and unmount: mount and unmount filesystems. have to specifiy path not just name
-7. OTHER:
+6. File locks: idk what this is but im not looking it up
+7. Commands:
+    * df: disk free, displays amount of disk space available on mounted filesystems. -h for human readable, -T for type of filesystem
+    * du: estimate disk space used by files/directories. -h for human readable, -s for summary of size
+    * mkfs: make file system. ERASES ALL DATA ON PARTITION
+    * gdisk: tool for managing GUID partitions
+    * fdisk: tool for managing MBR partitions
+    * parted: more advanced tool for managing partition tables
+    * stat: displays metadata about a file or directory
+    * mount and unmount: mount and unmount filesystems. have to specifiy path not just name
+9. OTHER:
    - MiB = mebibyte, unit of digital info storage. = 2^20 bytes  
 differs from regular decimal system as it is base 2 not 10
    - MOUNTING filesystems:
